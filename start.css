@@ -1,5 +1,23 @@
 
+header{
+    text-align: center;
 
+}
+
+main{
+    text-align: left;
+
+}
+
+
+#map {
+
+    width: 100%;
+    height: fit-content;
+    border: 2px blue;
+
+
+}
 
 
 #bild1
