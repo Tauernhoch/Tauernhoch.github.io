@@ -13,8 +13,8 @@ main{
 #map {
 
     width: 100%;
-    height: fit-content;
-    border: 2px blue;
+    height: 400px;
+    border: 2px solid blue;
 
 
 }
