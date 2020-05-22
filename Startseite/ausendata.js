@@ -1,5 +1,5 @@
 
-    {
+    const GRENZEN = {
         "type": "FeatureCollection",
         "crs": {
             "type": "name",
