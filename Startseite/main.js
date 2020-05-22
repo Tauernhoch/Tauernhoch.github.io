@@ -10,3 +10,6 @@ let map = L.map("map", {
         })
     ]
 });
+
+let ausengrenzen = L.geoJson(ausendata).addTo(map);
+
