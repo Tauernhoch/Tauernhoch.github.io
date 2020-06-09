@@ -11,7 +11,7 @@ let map = L.map("map", {
 
 let overlay = {
     borders: L.featureGroup(),
-    ebikes: L.featureGroup(),
+    //ebikes: L.featureGroup(),
 }
 
 
