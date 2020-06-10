@@ -1,15 +1,10 @@
-//let mapdiv = document.querySelector("#map");
 let startLayer = L.tileLayer.provider("BasemapAT.grau");
 
 let map = L.map("map", {
-    center: [47.0748663672, 12.695247219],
-    zoom: 8,
+    center: [47, 12.5],
+    zoom: 9,
     layers: [
         startLayer
-        // L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
-        //     maxZoom: 17,
-        //     attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>tributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https:/ntopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
-        // })
     ]
 });
 
@@ -28,8 +23,23 @@ L.control.layers({
     "Nationalpark Hohe Tauern": overlay.borders
 }).addTo(map); 
 
+
+//Aussengrenzen anzeigen in eigenem Layer
 let aussengrenze = L.geoJSON(GRENZE).addTo(overlay.borders);
+//Layer als default anzeigen
 overlay.borders.addTo(map);
 
-//let ausengrenzen = L.geoJson(ausendata).addTo(map);
+//console.log (GRENZE)
 
+
+// Rainviewer
+L.control.rainviewer({
+    position: 'bottomleft',
+    nextButtonText: '>',
+    playStopButtonText: 'Play/Stop',
+    prevButtonText: '<',
+    positionSliderLabelText: "Hour:",
+    opacitySliderLabelText: "Opacity:",
+    animationInterval: 500,
+    opacity: 0.5
+}).addTo(map);
