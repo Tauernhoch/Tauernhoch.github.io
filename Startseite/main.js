@@ -1,4 +1,4 @@
-//let mapdiv = document.querySelector("#map");
+
 let startLayer = L.tileLayer.provider("BasemapAT.grau");
 
 let map = L.map("map", {
@@ -6,15 +6,13 @@ let map = L.map("map", {
     zoom: 8,
     layers: [
         startLayer
-        // L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
-        //     maxZoom: 17,
-        //     attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>tributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https:/ntopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
-        // })
+  
     ]
 });
 
 let overlay = {
     borders: L.featureGroup(),
+    sight:L.featureGroup(),
 }
 
 L.control.layers({
@@ -25,13 +23,25 @@ L.control.layers({
         L.tileLayer.provider("BasemapAT.overlay")
     ])
 }, {
-    "Nationalpark Hohe Tauern": overlay.borders
+    "Nationalpark Hohe Tauern": overlay.borders,
+    "Points of interest":overlay.sight,
 }).addTo(map); 
 
 let aussengrenze = L.geoJSON(GRENZE).addTo(overlay.borders);
 overlay.borders.addTo(map);
 
-console.log(SIGHT)
+//console.log(SIGHT)
 
-//let ausengrenzen = L.geoJson(ausendata).addTo(map);
+let walk = L.geoJson(SIGHT, {
+    pointToLayer: function(point, latlng) {
+        let marker = L.marker(latlng);
+        console.log("Point", point);
+        marker.bindPopup(`<h3>${point.properties.NAME}</h3>
+        `);
+        return marker;
+    }
+}
 
+//overlay.sight.addTo(map);
+//
+)
