@@ -31,5 +31,7 @@ L.control.layers({
 let aussengrenze = L.geoJSON(GRENZE).addTo(overlay.borders);
 overlay.borders.addTo(map);
 
+console.log(SIGHT)
+
 //let ausengrenzen = L.geoJson(ausendata).addTo(map);
 

@@ -1,4 +1,4 @@
-const pointerest = {
+const SIGHT = {
     "type": "FeatureCollection",
     "crs": {
         "type": "name",
