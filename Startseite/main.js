@@ -32,7 +32,7 @@ overlay.borders.addTo(map);
 
 //console.log(SIGHT)
 
-let walk = L.geoJson(SIGHT, {
+let sight = L.geoJson(SIGHT, {
     pointToLayer: function(point, latlng) {
         let marker = L.marker(latlng);
         console.log("Point", point);
@@ -40,8 +40,7 @@ let walk = L.geoJson(SIGHT, {
         `);
         return marker;
     }
-}
+}).addTo(map);
 
 //overlay.sight.addTo(map);
 //
-)
