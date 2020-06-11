@@ -13,6 +13,7 @@ let map = L.map("map", {
 let overlay = {
     borders: L.featureGroup(),
     sight:L.featureGroup(),
+    wege:L.featureGroup(),
 }
 
 L.control.layers({
@@ -25,6 +26,7 @@ L.control.layers({
 }, {
     "Nationalpark Hohe Tauern": overlay.borders,
     "Points of interest":overlay.sight,
+    "Lehrwege des Nationalparks": overlay.wege,
 }).addTo(map); 
 
 let aussengrenze = L.geoJSON(GRENZE).addTo(overlay.borders);
@@ -41,6 +43,18 @@ let sight = L.geoJson(SIGHT, {
         return marker;
     }
 }).addTo(map);
+
+let wege = L.geoJson(WEGE, {
+    pointToLayer: function(point, latlng) {
+        let marker = L.marker(latlng);
+        console.log("Point", point);
+        marker.bindPopup(`<h3>${point.properties.NAME}</h3>
+        `);
+        return marker;
+    }
+}).addTo(map);
+
+
 
 //overlay.sight.addTo(map);
 //
