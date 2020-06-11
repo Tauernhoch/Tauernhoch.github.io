@@ -1,4 +1,4 @@
-const sight = {
+const SIGHT = {
     "type": "FeatureCollection",
     "name": "geo_js",
     "crs": {
