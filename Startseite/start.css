@@ -1,11 +1,36 @@
-header {
-    text-align: center;
+/* header {
+    padding-top: 0;
+    text-align: center; */
 
-}
 
-main {
-    text-align: left;
+main 
 
+    header {
+        color: green;
+        background-color: rgb(197, 41, 41);
+        max-height: 47px;
+    }
+    
+    header span {
+        display: inline-block;
+        font-weight: bold;
+        vertical-align: top;
+        padding: 0.65em; 
+    }
+    
+    header nav {
+        float: right;
+        padding-right: 0.5em;
+    }
+    
+    header nav p {
+        padding-top: 0;
+        font-size: 0.9em;
+        font-weight: bold;
+    }
+    
+    header nav a {
+        color: black;
 }
 
 
@@ -20,7 +45,7 @@ main {
 
 
 #bild1 {
-    position: absolute;
+    /* position: absolute; */
     top: 10px;
     left: 10px;
     width: 100px;
