@@ -8,10 +8,11 @@ let map = L.map("map", {
     ]
 });
 
+let bikekGroup = L.featureGroup().addTo(map);
 
 let overlay = {
     borders: L.featureGroup(),
-    //ebikes: L.featureGroup(),
+    ebikes: L.featureGroup(),
 }
 
 
@@ -26,44 +27,38 @@ L.control.layers({
     ])
 }, {
     "Nationalpark Hohe Tauern": overlay.borders,
-    "E-Bike Routen": overlay.ebikes
+     "E-Bike Routen": overlay.ebikes
 }).addTo(map);
 
 let aussengrenze = L.geoJSON(GRENZE).addTo(overlay.borders);
 overlay.borders.addTo(map);
 
 
-    // ebike
-    //let sightUrl = " https://gis.tirol.gv.at/ogd/sport_freizeit/NPHT/nphtt_ebike_wgs84_JSON.zip";
 
-    // let radln = L.geoJSON(EBIKE).addTo(overlay.ebikes);
-    // overlay.ebikes.addTo(map);
+let radln = L.geoJSON(EBIKE).addTo(overlay.ebikes);
+overlay.ebikes.addTo(map);
+// console.log(GRENZE);
+// console.log(radln);
 
-    // console.log (radln);
+// let ebike = EBIKE;
 
-    // let sights = L.geoJson.ajax(sightUrl, { //Punkte als Marker setzen
-    //     pointToLayer: function (point, latlng) { //definiton der MArker
-    //         let icon = L.icon({
-    //             iconUrl: 'Icons/sight.svg',
-    //             iconSize: [32, 32]
-    //         });
-    //         let marker = L.marker(latlng, {
-    //             icon: icon
-    //         });
-    
-    
-    //         // name, adresse, kurzbeschreibung und link
-    //         marker.bindPopup(`<h3>${point.properties.NAME}</h3>  
-    //         <p><c>Adresse:</c>${point.properties.ADRESSE}<p>
-    //         <p><c>Kurzbeschreibung:</c>${point.properties.BEMERKUNG}<p>
-    //         <p><a target="links" href="${point.properties.WEITERE_INF}">weiterführende Informationen</a></p>`);
-    //         return marker;
-    //     }
-    // });
-    
-
-
-
-
-
-//}).addTo(map);
+// L.geoJson.ajax(ebike, {
+//     style: function (feature) {
+//         if (feature.properties.FID == "1") {
+//             return {
+//                 color: "black",
+//                 weight: 2,
+//                 dashArray: "15 5"
+//             };
+//         } else {
+//             return {
+//                 color: "black",
+//                 weight: 2,
+//                 dashArray: "1 5"
+//             };
+//         }
+//     },
+//     onEachFeature: function (feature, layer) {
+//         layer.bindPopup(`<p>${feature.properties.BEZ_TEXT}</p>`);
+//     }
+// }).addTo(Ma);
