@@ -4,7 +4,33 @@
     border: 1px solid gray;
 }
 
+header {
+    color: #fff;
+    background-color: #000;
+    max-height: 47px;
+}
 
+header span {
+    display: inline-block;
+    font-weight: bold;
+    vertical-align: top;
+    padding: 0.65em; 
+}
+
+header nav {
+    float: right;
+    padding-right: 0.5em;
+}
+
+header nav p {
+    padding-top: 0;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+header nav a {
+    color: white;
+}
 
 footer {
     width: 100%;
