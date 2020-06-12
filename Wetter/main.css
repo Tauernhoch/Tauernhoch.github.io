@@ -3,6 +3,14 @@ body {
     margin: auto;
     font-family: "Open Sans", sans-serif;}
 
+#legende {
+        position: absolute;
+        top: 550px;
+        left: 370px;
+        width: 100px;
+        height: 160px;
+    }
+
 #map {
     width: calc(100% -2px);
     height: 70vh;
@@ -49,3 +57,4 @@ footer .back {
 footer .next {
     float: right;
 }
+
