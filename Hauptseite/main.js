@@ -16,6 +16,7 @@ let overlay = {
     Hoch_Tirol: L.featureGroup(),
     Großglockner:L.featureGroup(),
     Skitour: L.featureGroup(),
+    Hütten: L.featureGroup()
 }
 
 
@@ -33,7 +34,8 @@ L.control.layers({
      "E-Bike Routen": overlay.ebikes,
      "Wanderweg Hoch Tirol": overlay.Hoch_Tirol,
      "Großglockner Normalweg": overlay.Großglockner,
-     "Skitour Großer Geiger": overlay.Skitour
+     "Skitour Großer Geiger": overlay.Skitour,
+     "Unterkünfte": overlay.Hütten,
 }).addTo(map);
 
 let aussengrenze = L.geoJSON(GRENZE).addTo(overlay.borders);
@@ -83,33 +85,48 @@ gpx.on("loaded", function(evt) {
 
 
 
-// let gpx2 = new L.GPX(`Hoch_Tirol/TK_01_Hoch_Tirol_3.gpx`, {
-//     async: true,
-//     polyline_options: {
-//         color: "black",
-//         dashArray: [2, 5]
-//     }
-// });
-// gpx2.on("loaded", function(evt) {
-//     map.fitBounds(evt.target.getBounds());
-// }).addTo(overlay.Hoch_Tirol);
+let gpx2 = new L.GPX(`Hoch_Tirol/TK_01_Hoch_Tirol_3.gpx`, {
+    async: true,
+    polyline_options: {
+        color: "black",
+        dashArray: [2, 5]
+    }
+});
+gpx2.on("loaded", function(evt) {
+    map.fitBounds(evt.target.getBounds());
+}).addTo(overlay.Hoch_Tirol);
 
-// let gpx3 = new L.GPX(`Skitour/TK_02_GrosserGeiger.gpx`, {
-//     async: true,
-//     polyline_options: {
-//         color: "black",
-//         dashArray: [2, 5]
-//     }
-// });
-// gpx3.on("loaded", function(evt) {
-//     map.fitBounds(evt.target.getBounds());
-// }).addTo(overlay.Skitour);
+let gpx3 = new L.GPX(`Skitour/TK_02_GrosserGeiger.gpx`, {
+    async: true,
+    polyline_options: {
+        color: "black",
+        dashArray: [2, 5]
+    }
+});
+gpx3.on("loaded", function(evt) {
+    map.fitBounds(evt.target.getBounds());
+}).addTo(overlay.Skitour);
 
 
 
 let gpx4 = new L.GPX("OEAV_Berghuetten.gpx", {
-    async: true
+    async: true,
+    
+    
+    
 });
 gpx4.on("loaded", function(evt) {
+    let marker = L.marker([lat,lng])
     map.fitBounds(evt.target.getBounds());
-}).addTo(map);
+}).addTo(map).addTo(overlay.Hütten);
+
+// let sight = L.geoJson(SIGHT, {
+//     pointToLayer: function(point, latlng) {
+//         let marker = L.marker(latlng);
+//         console.log("Point", point);
+//         marker.bindPopup(`<h3>${point.properties.NAME}</h3>
+//         `);
+//         return marker;
+//     }
+L.marker([lat,lng]).addTo(map);
+
