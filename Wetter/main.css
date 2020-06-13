@@ -33,9 +33,11 @@ body {
     color: white;
 }
 
+
+/* Fixieren auf der Karte irgendwie möglich??? */
 #legende {
     position: absolute;
-    top: 550px;
+    top: 1220px;
     left: 370px;
     width: 100px;
     height: 160px;
@@ -80,6 +82,7 @@ main h1 {
     text-align: left;
     position: relative;
     right: -220px;
+    top: -205px;
     color: green;
     text-shadow: 2px 1px 1px black;
 }
@@ -88,6 +91,7 @@ main h1 {
     text-align: left;
     position: relative;
     right: -220px;
+    top: -210px;
     width: 83%;
 }
 

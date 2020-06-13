@@ -39,7 +39,7 @@ body {
     height: 70vh;
     border: 1px solid gray;
     position: relative;
-    bottom: -60px;
+    
 }
 
 header {
@@ -74,6 +74,7 @@ header nav a {
 main h1 {
     text-align: left;
     position: relative;
+    top: -205px;
     right: -220px;
     color: green;
     text-shadow: 2px 1px 1px black;
@@ -83,9 +84,15 @@ main h1 {
     text-align: left;
     position: relative;
     right: -220px;
+    top: -210px;
     width: 83%;
 }
 
+main h2 {
+    text-align: left;
+    position: relative;
+    
+}
 
 footer {
     width: 100%;
