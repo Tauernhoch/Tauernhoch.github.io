@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wetterinformationen</title>
 
-      <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
@@ -34,36 +34,47 @@
 <!-- Gletscher url: https://pixabay.com/de/photos/gletscher-gro%C3%9Fglockner-berge-4352621/-->
 
 <body>
+
     <header>
+        <span>Wetter in den Hohen Tauern </span>
+        <a href="https://data.gv.at/"><img src="icons/tauern_logo.png" alt="Nationalpark Hohe Tauern" /></a>
+        <nav>
+            <p>
+                <i class="fab fa-github"></i> <a
+                    href="https://github.com/webmapping/webmapping.github.io/tree/master/wien">Source</a> |
+                <i class="fas fa-download"></i> <a href="https://data.gv.at/">OGD-Data</a>
+                <i class="fa fa-thermometer-half" aria-hidden="true"></i> <a
+                    href="https://www.data.gv.at/katalog/dataset/land-tirol_wetterstationsdatentirol">OGD-Weather
+                    Data</a>
+            </p>
+        </nav>
+    </header>
 
 
-        <header>
-            <span>Wetter in den Hohen Tauern </span>
-            <a href="https://data.gv.at/"><img src="icons/tauern_logo.png" alt="Nationalpark Hohe Tauern" /></a>
-            <nav>
-                <p>
-                    <i class="fab fa-github"></i> <a
-                        href="https://github.com/webmapping/webmapping.github.io/tree/master/wien">Source</a> |
-                    <i class="fas fa-download"></i> <a href="https://data.gv.at/">OGD-Data</a>
-                    <i class="fa fa-thermometer-half" aria-hidden="true"></i> <a
-                        href="https://www.data.gv.at/katalog/dataset/land-tirol_wetterstationsdatentirol">OGD-Weather Data</a>
-                </p>
-            </nav>
-        </header>
+    <header2>
 
+        <img id="bild 1" src="images/gletscher.png" alt="Gletscher des Großglockners ">
+        <p><a href="https://pixabay.com/de/photos/gletscher-gro%C3%9Fglockner-berge-4352621/"></a></p>
+
+        <hr>
         <div class="vertical-menu">
             <a href="https://tauernhoch.github.io/Startseite/" class="active">Startseite</a>
             <a href="https://tauernhoch.github.io/Hauptseite/">Hauptseite</a>
             <a href="https://tauernhoch.github.io/Wetter/">Wetter</a>
             <a href="https://github.com/tauernhoch/tauernhoch.github.io">Kontakt</a>
-          </div>
+        </div>
 
-    </header>
+
+    </header2>
+
+
     <main>
         <h1>Informationen zum Wetter im Nationalpark</h1>
-        <p id="einrueck">Um Ihre nächste Aktivität im Nationalpark Hohe Tauern besser planen zu können, behalten Sie den Niederschlag im Blick! Beim Klicken auf das Regenwolkensymbol erscheint eine Animation, die den Niederschlag der letzten 2 Stunden anzeigt.
+        <p id="einrueck">Um Ihre nächste Aktivität im Nationalpark Hohe Tauern besser planen zu können, behalten Sie den
+            Niederschlag im Blick! Beim Klicken auf das Regenwolkensymbol erscheint eine Animation, die den Niederschlag
+            der letzten 2 Stunden anzeigt.
         </p>
-        
+
         <div id="map"></div>
         <img id="legende" src="images/legende.png" alt="Legende Rainviewer">
         <p><a href="https://www.rainviewer.com/"></a></p>
