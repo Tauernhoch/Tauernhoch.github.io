@@ -13,6 +13,8 @@ let bikekGroup = L.featureGroup().addTo(map);
 let overlay = {
     borders: L.featureGroup(),
     ebikes: L.featureGroup(),
+    Hoch_Tirol: L.featureGroup(),
+    Großglockner:L.featureGroup(),
 }
 
 
@@ -27,7 +29,9 @@ L.control.layers({
     ])
 }, {
     "Nationalpark Hohe Tauern": overlay.borders,
-     "E-Bike Routen": overlay.ebikes
+     "E-Bike Routen": overlay.ebikes,
+     "Wanderweg Hoch Tirol": overlay.Hoch_Tirol,
+     "Großglockner Normalweg": overlay.Großglockner
 }).addTo(map);
 
 let aussengrenze = L.geoJSON(GRENZE).addTo(overlay.borders);
@@ -64,16 +68,20 @@ overlay.ebikes.addTo(map);
 // }).addTo(Ma);
 
 let gpx = new L.GPX(`Glockner.gpx`, {
-    async: true
+    async: true,
+    polyline_options: {
+        color: "red",
+        dashArray: [2, 5]
+    }
 });
 gpx.on("loaded", function(evt) {
     map.fitBounds(evt.target.getBounds());
-}).addTo(map)
+}).addTo(overlay.Großglockner);
 
 
 
 
-let gpx2 = new L.GPX(`Hoch_Tirol/TK_01_Hoch_Tirol_4.gpx`, {
+let gpx2 = new L.GPX(`Hoch_Tirol/TK_01_Hoch_Tirol_3.gpx`, {
     async: true,
     polyline_options: {
         color: "black",
@@ -82,4 +90,5 @@ let gpx2 = new L.GPX(`Hoch_Tirol/TK_01_Hoch_Tirol_4.gpx`, {
 });
 gpx2.on("loaded", function(evt) {
     map.fitBounds(evt.target.getBounds());
-}).addTo(map);
+}).addTo(overlay.Hoch_Tirol);
+
