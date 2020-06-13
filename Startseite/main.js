@@ -43,7 +43,14 @@ let aussengrenze = L.geoJSON(GRENZE).addTo(overlay.borders);
 
 let sight = L.geoJson(SIGHT, {
     pointToLayer: function(point, latlng) {
-        let marker = L.marker(latlng);
+       let siteIcon = L.icon({
+            iconUrl: 'icons/squirrel.png',
+            iconSize: [32, 32]
+        });
+       
+        let marker = L.marker(latlng,{
+icon: siteIcon
+        });
         console.log("Point", point);
         marker.bindPopup(`<h3>${point.properties.NAME}</h3>
         `);
@@ -62,8 +69,5 @@ let wege = L.geoJson(WEGE, {
 }).addTo(map);
 
 
-
-//overlay.sight.addTo(map);
-//
 
 
