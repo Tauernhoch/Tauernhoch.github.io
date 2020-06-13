@@ -29,6 +29,11 @@ L.control.layers({
     "Lehrwege des Nationalparks": overlay.wege,
 }).addTo(map); 
 
+//Maßstab
+L.control.scale({
+    imperial: false
+}).addTo(map);
+
 let aussengrenze = L.geoJSON(GRENZE).addTo(overlay.borders);
 overlay.borders.addTo(map);
 
@@ -58,3 +63,5 @@ let wege = L.geoJson(WEGE, {
 
 //overlay.sight.addTo(map);
 //
+
+

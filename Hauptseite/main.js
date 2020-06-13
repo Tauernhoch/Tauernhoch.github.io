@@ -38,6 +38,13 @@ L.control.layers({
      "Unterkünfte": overlay.Hütten,
 }).addTo(map);
 
+
+//Maßstab
+L.control.scale({
+    imperial: false
+}).addTo(map);
+
+
 let aussengrenze = L.geoJSON(GRENZE).addTo(overlay.borders);
 overlay.borders.addTo(map);
 

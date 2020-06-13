@@ -24,6 +24,11 @@ L.control.layers({
 }).addTo(map); 
 
 
+//Maßstab
+L.control.scale({
+    imperial: false
+}).addTo(map);
+
 //Aussengrenzen anzeigen in eigenem Layer
 let aussengrenze = L.geoJSON(GRENZE).addTo(overlay.borders);
 //Layer als default anzeigen
