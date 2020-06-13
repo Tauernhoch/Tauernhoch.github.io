@@ -62,3 +62,24 @@ overlay.ebikes.addTo(map);
 //         layer.bindPopup(`<p>${feature.properties.BEZ_TEXT}</p>`);
 //     }
 // }).addTo(Ma);
+
+let gpx = new L.GPX(`Glockner.gpx`, {
+    async: true
+});
+gpx.on("loaded", function(evt) {
+    map.fitBounds(evt.target.getBounds());
+}).addTo(map)
+
+
+
+
+let gpx2 = new L.GPX(`Hoch_Tirol/TK_01_Hoch_Tirol_4.gpx`, {
+    async: true,
+    polyline_options: {
+        color: "black",
+        dashArray: [2, 5]
+    }
+});
+gpx2.on("loaded", function(evt) {
+    map.fitBounds(evt.target.getBounds());
+}).addTo(map);
