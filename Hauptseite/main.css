@@ -39,7 +39,7 @@ body {
     height: 70vh;
     border: 1px solid gray;
     position: relative;
-    bottom: -70px;
+    bottom: -60px;
 }
 
 header {
@@ -75,6 +75,8 @@ main h1 {
     text-align: left;
     position: relative;
     right: -220px;
+    color: green;
+    text-shadow: 2px 1px 1px black;
 }
 
 #einrueck {
@@ -83,7 +85,6 @@ main h1 {
     right: -220px;
     width: 83%;
 }
-
 
 
 footer {
