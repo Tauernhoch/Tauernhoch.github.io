@@ -46,7 +46,7 @@ L.control.scale({
 
 
 let aussengrenze = L.geoJSON(GRENZE).addTo(overlay.borders);
-overlay.borders.addTo(map);
+// overlay.borders.addTo(map);
 
 
 
@@ -80,6 +80,11 @@ overlay.ebikes.addTo(map);
 
 let gpx = new L.GPX(`Glockner.gpx`, {
     async: true,
+    marker_options: {
+        startIconUrl: 'icons/hut.png',
+        endIconUrl: 'icons/hut.png',
+        
+      },
     polyline_options: {
         color: "red",
         dashArray: [2, 5]
@@ -88,6 +93,9 @@ let gpx = new L.GPX(`Glockner.gpx`, {
 gpx.on("loaded", function(evt) {
     map.fitBounds(evt.target.getBounds());
 }).addTo(overlay.Großglockner);
+
+
+
 
 // let gpx5 = new L.GPX(`venediger_nordgrat_track`, {
 //     async: true,
@@ -127,22 +135,35 @@ gpx3.on("loaded", function(evt) {
 
 let gpx4 = new L.GPX("OEAV_Berghuetten.gpx", {
     async: true,
-   
+     marker_options: {
+        IconUrl: 'icons/hut.png',
     
     
-});
+}});
 gpx4.on("loaded", function(evt) {
-    let marker = L.marker([lon,lat])
+    // let marker = L.marker([lon,lat])
     map.fitBounds(evt.target.getBounds());
 }).addTo(map).addTo(overlay.Hütten);
 
-// let sight = L.geoJson(SIGHT, {
-//     pointToLayer: function(point, latlng) {
-//         let marker = L.marker(latlng);
-//         console.log("Point", point);
-//         marker.bindPopup(`<h3>${point.properties.NAME}</h3>
-//         `);
-//         return marker;
-//     }
-L.marker([lat,lng]).addTo(map);
+
+
+
+        
+     
+let sight = L.geoJson(SIGHT, {
+    pointToLayer: function(point, latlng) {
+       let siteIcon = L.icon({
+            iconUrl: 'icons/squirrel.png',
+            iconSize: [32, 32]
+        });
+       
+        let marker = L.marker(latlng,{
+icon: siteIcon
+        });
+        console.log("Point", point);
+        marker.bindPopup(`<h3>${point.properties.NAME}</h3>
+        `);
+        return marker;
+    }
+}).addTo(overlay.sight);
 
