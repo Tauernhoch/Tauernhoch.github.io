@@ -37,7 +37,7 @@ L.control.scale({
 }).addTo(map);
 
 let aussengrenze = L.geoJSON(GRENZE).addTo(overlay.borders);
-overlay.borders.addTo(map);
+ overlay.borders.addTo(map);
 
 //console.log(SIGHT)
 
@@ -49,7 +49,7 @@ let sight = L.geoJson(SIGHT, {
         `);
         return marker;
     }
-}).addTo(map);
+}).addTo(overlay.sight);
 
 let wege = L.geoJson(WEGE, {
     pointToLayer: function(point, latlng) {
