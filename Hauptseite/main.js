@@ -82,7 +82,16 @@ gpx.on("loaded", function(evt) {
     map.fitBounds(evt.target.getBounds());
 }).addTo(overlay.Großglockner);
 
-
+// let gpx5 = new L.GPX(`venediger_nordgrat_track`, {
+//     async: true,
+//     polyline_options: {
+//         color: "yellow",
+//         dashArray: [2, 5]
+//     }
+// });
+// gpx5.on("loaded", function(evt) {
+//     map.fitBounds(evt.target.getBounds());
+// }).addTo(map);
 
 
 let gpx2 = new L.GPX(`Hoch_Tirol/TK_01_Hoch_Tirol_3.gpx`, {
