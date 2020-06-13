@@ -1,36 +1,45 @@
 body {
     max-width: 1280px;
     margin: auto;
-    font-family: "Open Sans", sans-serif;}
+    font-family: "Open Sans", sans-serif;
+}
 
-    .vertical-menu {
-        width: 200px; /* Set a width if you like */
-      }
-      
-      .vertical-menu a {
-        background-color: #eee; /* Grey background color */
-        color: black; /* Black text color */
-        display: block; /* Make the links appear below each other */
-        padding: 12px; /* Add some padding */
-        text-decoration: none; /* Remove underline from links */
-      }
-      
-      .vertical-menu a:hover {
-        background-color: #ccc; /* Dark grey background on mouse-over */
-      }
-      
-      .vertical-menu a.active {
-        background-color: #4CAF50; /* Add a green color to the "active/current" link */
-        color: white;
-      }
+.vertical-menu {
+    width: 200px;
+    /* Set a width if you like */
+}
+
+.vertical-menu a {
+    background-color: #eee;
+    /* Grey background color */
+    color: black;
+    /* Black text color */
+    display: block;
+    /* Make the links appear below each other */
+    padding: 12px;
+    /* Add some padding */
+    text-decoration: none;
+    /* Remove underline from links */
+}
+
+.vertical-menu a:hover {
+    background-color: #ccc;
+    /* Dark grey background on mouse-over */
+}
+
+.vertical-menu a.active {
+    background-color: #4CAF50;
+    /* Add a green color to the "active/current" link */
+    color: white;
+}
 
 #legende {
-        position: absolute;
-        top: 550px;
-        left: 370px;
-        width: 100px;
-        height: 160px;
-    }
+    position: absolute;
+    top: 550px;
+    left: 370px;
+    width: 100px;
+    height: 160px;
+}
 
 #map {
     width: calc(100% -2px);
@@ -48,7 +57,7 @@ header span {
     display: inline-block;
     font-weight: bold;
     vertical-align: top;
-    padding: 0.65em; 
+    padding: 0.65em;
 }
 
 header nav {
@@ -69,13 +78,13 @@ header nav a {
 
 main h1 {
     text-align: left;
-        position: relative; 
-        right: -220px;
+    position: relative;
+    right: -220px;
 }
 
 #einrueck {
     text-align: left;
-    position: relative; 
+    position: relative;
     right: -220px;
     width: 83%;
 }
@@ -92,4 +101,3 @@ footer .back {
 footer .next {
     float: right;
 }
-
