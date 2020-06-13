@@ -15,6 +15,7 @@ let overlay = {
     ebikes: L.featureGroup(),
     Hoch_Tirol: L.featureGroup(),
     Großglockner:L.featureGroup(),
+    Skitour: L.featureGroup(),
 }
 
 
@@ -31,7 +32,8 @@ L.control.layers({
     "Nationalpark Hohe Tauern": overlay.borders,
      "E-Bike Routen": overlay.ebikes,
      "Wanderweg Hoch Tirol": overlay.Hoch_Tirol,
-     "Großglockner Normalweg": overlay.Großglockner
+     "Großglockner Normalweg": overlay.Großglockner,
+     "Skitour Großer Geiger": overlay.Skitour
 }).addTo(map);
 
 let aussengrenze = L.geoJSON(GRENZE).addTo(overlay.borders);
@@ -81,14 +83,33 @@ gpx.on("loaded", function(evt) {
 
 
 
-let gpx2 = new L.GPX(`Hoch_Tirol/TK_01_Hoch_Tirol_3.gpx`, {
-    async: true,
-    polyline_options: {
-        color: "black",
-        dashArray: [2, 5]
-    }
-});
-gpx2.on("loaded", function(evt) {
-    map.fitBounds(evt.target.getBounds());
-}).addTo(overlay.Hoch_Tirol);
+// let gpx2 = new L.GPX(`Hoch_Tirol/TK_01_Hoch_Tirol_3.gpx`, {
+//     async: true,
+//     polyline_options: {
+//         color: "black",
+//         dashArray: [2, 5]
+//     }
+// });
+// gpx2.on("loaded", function(evt) {
+//     map.fitBounds(evt.target.getBounds());
+// }).addTo(overlay.Hoch_Tirol);
 
+// let gpx3 = new L.GPX(`Skitour/TK_02_GrosserGeiger.gpx`, {
+//     async: true,
+//     polyline_options: {
+//         color: "black",
+//         dashArray: [2, 5]
+//     }
+// });
+// gpx3.on("loaded", function(evt) {
+//     map.fitBounds(evt.target.getBounds());
+// }).addTo(overlay.Skitour);
+
+
+
+let gpx4 = new L.GPX("OEAV_Berghuetten.gpx", {
+    async: true
+});
+gpx4.on("loaded", function(evt) {
+    map.fitBounds(evt.target.getBounds());
+}).addTo(map);
