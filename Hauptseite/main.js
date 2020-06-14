@@ -147,24 +147,27 @@ gpx3.on("loaded", function (evt) {
 
 
 
+
+
+
 let gpx4 = new L.GPX("OEAV_Berghuetten.gpx", {
     async: true,
     // marker_options: {
     //     IconUrl: 'icons/hut.png',
     pointToLayer: function (point, latlng) {
-        let siteIcon = L.icon({
-            iconUrl: 'icons/sight.svg',
+        let siteIcon2 = L.icon({
+            iconUrl: 'icons/hut.png',
             iconSize: [32, 32]
         });
         let marker = L.marker(latlng, {
-            icon: siteIcon
+            icon: siteIcon2
         });
 
 
     }
 });
 gpx4.on("loaded", function (evt) {
-    // let marker = L.marker([lon,lat])
+    let marker = L.marker([lat,lng])
     map.fitBounds(evt.target.getBounds());
 }).addTo(overlay.Hütten);
 
@@ -173,19 +176,28 @@ gpx4.on("loaded", function (evt) {
 
 
 
-let sight = L.geoJson(SIGHT, {
-    pointToLayer: function (point, latlng) {
-        let siteIcon = L.icon({
-            iconUrl: 'icons/squirrel.png',
-            iconSize: [32, 32]
-        });
+// let sight = L.geoJson(SIGHT, {
+//     pointToLayer: function (point, latlng) {
+//         let siteIcon = L.icon({
+//             iconUrl: 'icons/squirrel.png',
+//             iconSize: [32, 32]
+//         });
 
-        let marker = L.marker(latlng, {
-            icon: siteIcon
-        });
-        console.log("Point", point);
-        marker.bindPopup(`<h3>${point.properties.NAME}</h3>
-        `);
-        return marker;
-    }
-}).addTo(overlay.sight);
+//         let marker = L.marker(latlng, {
+//             icon: siteIcon
+//         });
+//         console.log("Point", point);
+//         marker.bindPopup(`<h3>${point.properties.NAME}</h3>
+//         `);
+//         return marker;
+//     }
+// }).addTo(overlay.sight);
+
+let myIcon = L.icon({
+    iconUrl: 'icons/hut.png',
+    iconSize: [20, 38],
+    iconAnchor: [0, 0],
+    // popupAnchor: [-3, -76],
+   
+});
+L.marker([47.08262, 12.69434], {icon: myIcon}).addTo(map);
