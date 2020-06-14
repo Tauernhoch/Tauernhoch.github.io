@@ -81,8 +81,8 @@ overlay.ebikes.addTo(map);
 let gpx = new L.GPX(`Glockner.gpx`, {
     async: true,
     marker_options: {
-        startIconUrl: 'icons/hut.png',
-        endIconUrl: 'icons/hut.png',
+        startIconUrl: 'icons/climbing.png',
+        endIconUrl: 'icons/climbing.png',
         
       },
     polyline_options: {
@@ -111,6 +111,12 @@ gpx.on("loaded", function(evt) {
 
 let gpx2 = new L.GPX(`Hoch_Tirol/TK_01_Hoch_Tirol_3.gpx`, {
     async: true,
+    marker_options: {
+        startIconUrl: 'icons/hiking2.png',
+        endIconUrl: 'icons/hiking2.png',
+        
+      },
+    
     polyline_options: {
         color: "black",
         dashArray: [2, 5]
@@ -122,6 +128,10 @@ gpx2.on("loaded", function(evt) {
 
 let gpx3 = new L.GPX(`Skitour/TK_02_GrosserGeiger.gpx`, {
     async: true,
+    marker_options: {
+        startIconUrl: 'icons/skiing.png',
+        endIconUrl: 'icons/skiing.png',
+    },
     polyline_options: {
         color: "black",
         dashArray: [2, 5]
