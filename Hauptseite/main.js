@@ -1,7 +1,7 @@
 let startLayer = L.tileLayer.provider("BasemapAT.grau");
 
 let map = L.map("map", {
-    center: [47.17971944, 12.181495],
+    center: [47, 12.5],
     zoom: 11,
     layers: [
         startLayer
@@ -51,7 +51,9 @@ let aussengrenze = L.geoJSON(GRENZE).addTo(overlay.borders);
 
 
 //ebike Routen
-let radln = L.geoJSON(BIKE).addTo(overlay.ebikes);
+let radln = L.geoJSON(BIKE,{
+    color: "yellow",
+    }).addTo(overlay.ebikes);
 overlay.ebikes.addTo(map);
 
 //console.log (EBIKE)
