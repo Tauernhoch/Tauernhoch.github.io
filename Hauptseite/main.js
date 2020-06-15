@@ -188,7 +188,7 @@ gpx3.on("loaded", function (evt) {
 
 
 
-let huetten = L.GPX(app.OEAV_Berghuetten.gpx, {
+let huetten = L.GPX("OEAV_Berghuetten.gpx", {
     async: true,
     marker_options: {
       wptIconUrls: {
@@ -201,3 +201,5 @@ let huetten = L.GPX(app.OEAV_Berghuetten.gpx, {
     var gpx = e.target;
     map.fitBounds(gpx.getBounds());
   }).addTo(map);
+
+//   https://github.com/mpetazzoni/leaflet-gpx
