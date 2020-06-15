@@ -1,6 +1,6 @@
 {
     "type": "FeatureCollection",
-    "name": "Lehrwege",
+    "name": "geo_js",
     "crs": {
         "type": "name",
         "properties": {

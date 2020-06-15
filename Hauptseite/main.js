@@ -169,7 +169,7 @@ let gpx4 = new L.GPX("OEAV_Berghuetten.gpx", {
 gpx4.on("loaded", function (evt) {
     let marker = L.marker([lat,lng])
     map.fitBounds(evt.target.getBounds());
-}).addTo(overlay.Hütten);
+}).addTo(overlay.Huetten);
 
 
 
