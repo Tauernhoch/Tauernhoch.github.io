@@ -8,7 +8,8 @@ let map = L.map("map", {
     ]
 });
 
-let bikekGroup = L.featureGroup().addTo(map);
+
+//let bikekGroup = L.featureGroup().addTo(map);
 
 let overlay = {
     borders: L.featureGroup(),
@@ -49,34 +50,12 @@ let aussengrenze = L.geoJSON(GRENZE).addTo(overlay.borders);
 // overlay.borders.addTo(map);
 
 
+//ebike Routen
+let radln = L.geoJSON(BIKE).addTo(overlay.ebikes);
+overlay.ebikes.addTo(map);
 
-let radln = L.geoJSON(bike).addTo(overlay.bikes);
-overlay.bikes.addTo(map);
-// console.log(GRENZE);
-// console.log(radln);
+//console.log (EBIKE)
 
-// let ebike = EBIKE;
-
-// L.geoJson.ajax(ebike, {
-//     style: function (feature) {
-//         if (feature.properties.FID == "1") {
-//             return {
-//                 color: "black",
-//                 weight: 2,
-//                 dashArray: "15 5"
-//             };
-//         } else {
-//             return {
-//                 color: "black",
-//                 weight: 2,
-//                 dashArray: "1 5"
-//             };
-//         }
-//     },
-//     onEachFeature: function (feature, layer) {
-//         layer.bindPopup(`<p>${feature.properties.BEZ_TEXT}</p>`);
-//     }
-// }).addTo(Ma);
 
 let gpx = new L.GPX(`Glockner.gpx`, {
     async: true,
@@ -91,7 +70,7 @@ let gpx = new L.GPX(`Glockner.gpx`, {
     }
 });
 gpx.on("loaded", function (evt) {
-   
+
 }).addTo(overlay.Großglockner);
 
 
@@ -127,8 +106,8 @@ let gpx2 = new L.GPX(`Hoch_Tirol/TK_01_Hoch_Tirol_3.gpx`, {
 });
 gpx2.on("loaded", function (evt) {
     map.fitBounds(evt.target.getBounds());
-   
-   
+
+
 }).addTo(overlay.Hoch_Tirol);
 
 let gpx3 = new L.GPX(`Skitour/TK_02_GrosserGeiger.gpx`, {
@@ -143,7 +122,7 @@ let gpx3 = new L.GPX(`Skitour/TK_02_GrosserGeiger.gpx`, {
     }
 });
 gpx3.on("loaded", function (evt) {
-   
+
 }).addTo(overlay.Skitour);
 
 
@@ -151,23 +130,23 @@ gpx3.on("loaded", function (evt) {
 
 
 
-// let gpx4 = new L.GPX("OEAV_Berghuetten.gpx", {
-//     async: true,
-//     // marker_options: {
-//     //     IconUrl: 'icons/hut.png',
-//     pointToLayer: function (point, latlng) {
-//         let siteIcon2 = L.icon({
-//             iconUrl: 'icons/hut.png',
-//             iconSize: [32, 32]
-//         });
-//         let marker = L.marker(latlng, {
-//             icon: siteIcon2
-//         });
-
+let gpx4 = new L.GPX("OEAV_Berghuetten.gpx", {
+    async: true,
+    // marker_options: {
+    //     IconUrl: 'icons/hut.png',
+    pointToLayer: function (point, latlng) {
+        let siteIcon2 = L.icon({
+            iconUrl: 'icons/hut.png',
+            iconSize: [32, 32]
+        });
+        let marker = L.marker(latlng, {
+            icon: siteIcon2
+        });
     }
 });
+
 gpx4.on("loaded", function (evt) {
-    let marker = L.marker([lat,lng])
+    let marker = L.marker([lat, lng])
     map.fitBounds(evt.target.getBounds());
 }).addTo(overlay.Huetten);
 
@@ -189,7 +168,7 @@ gpx4.on("loaded", function (evt) {
 //     iconSize: [20, 38],
 //     iconAnchor: [0, 0],
 //     // popupAnchor: [-3, -76],
-   
+
 // });
 
 
@@ -197,16 +176,16 @@ gpx4.on("loaded", function (evt) {
 let huetten = L.GPX("OEAV_Berghuetten.gpx", {
     async: true,
     marker_options: {
-      wptIconUrls: {
-        'name': 'icons/hut.png',
-        
-      },
-     
+        wptIconUrls: {
+            'name': 'icons/hut.png',
+
+        },
+
     }
-  })
-  huetten.on('loaded', function (e) {
+})
+huetten.on('loaded', function (e) {
     var gpx = e.target;
     // map.fitBounds(gpx.getBounds());
-  }).addTo(map);
+}).addTo(map);
 
 //   https://github.com/mpetazzoni/leaflet-gpx

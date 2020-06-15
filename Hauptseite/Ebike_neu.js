@@ -1,4 +1,4 @@
-const bike = {
+const BIKE = {
     "type": "FeatureCollection",
     "name": "Ebike_neu",
     "crs": {
