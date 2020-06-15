@@ -81,6 +81,7 @@ gpx.on("loaded", function (evt) {
 controlElevation.clear();
 controlElevation.load(`Glockner.gpx`);
 }).addTo(overlay.Großglockner);
+
 overlay.Großglockner.addTo(map);
 
 //Elevation Control müssen wir nicht lassen, v.a. weil ich nicht weiß, ob sich das evtl. an- und ausschalten lassen kann, dass des nicht immer da ist
@@ -90,6 +91,8 @@ let controlElevation = L.control.elevation({
     elevationDiv: "#profile",
     followMarker: false
 }).addTo(map);
+
+
 
 
 // let gpx5 = new L.GPX(`venediger_nordgrat_track`, {
