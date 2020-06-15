@@ -57,22 +57,4 @@ icon: siteIcon
         return marker;
     }
 }).addTo(overlay.sight);
-
-//let wege = L.geoJson(WEGE, {
-//   pointToLayer: function(point, latlng) {
-//        let marker = L.marker(latlng);
-//        console.log("Point", point);
-//        marker.bindPopup(`<h3>${point.properties.NAME}</h3>
-//       `);
-//       return marker;
-//   }
-//}).addTo(overlay.wege);
-//overlay.wege.addTo(map);
-
-//let walk = L.geoJson(LEHRWEG, {
-//    pointToLayer: function(point, latlng) {
-//        let marker = L.marker(latlng);
-//        console.log("Point", point);
-        
-//    }
-//}).addTo(map)
+overlay.sight.addTo(map);
