@@ -18,7 +18,8 @@ const SIGHT = {
                 "POI_TYP": 13,
                 "LAND": "Tirol",
                 "BILDUNG": 0,
-                "JARPRO15": 1
+                "JARPRO15": 1,
+                "typ":Kirche
             },
             "geometry": {
                 "type": "Point",
@@ -36,7 +37,8 @@ const SIGHT = {
                 "POI_TYP": 33,
                 "LAND": "Tirol",
                 "BILDUNG": 0,
-                "JARPRO15": 1
+                "JARPRO15": 1,
+                "typ":Wasserfall
             },
             "geometry": {
                 "type": "Point",
@@ -54,7 +56,8 @@ const SIGHT = {
                 "POI_TYP": 37,
                 "LAND": "Tirol",
                 "BILDUNG": 0,
-                "JARPRO15": 1
+                "JARPRO15": 1,
+                "typ":Gipfel
             },
             "geometry": {
                 "type": "Point",
@@ -72,7 +75,8 @@ const SIGHT = {
                 "POI_TYP": 13,
                 "LAND": "Tirol",
                 "BILDUNG": 0,
-                "JARPRO15": 1
+                "JARPRO15": 1,
+                "typ":Kirche
             },
             "geometry": {
                 "type": "Point",
@@ -90,7 +94,8 @@ const SIGHT = {
                 "POI_TYP": 13,
                 "LAND": "Tirol",
                 "BILDUNG": 0,
-                "JARPRO15": 1
+                "JARPRO15": 1,
+                "typ":Kirche
             },
             "geometry": {
                 "type": "Point",
@@ -108,7 +113,8 @@ const SIGHT = {
                 "POI_TYP": 33,
                 "LAND": "Tirol",
                 "BILDUNG": 0,
-                "JARPRO15": 1
+                "JARPRO15": 1,
+                "typ":Wasserfall
             },
             "geometry": {
                 "type": "Point",
@@ -126,7 +132,8 @@ const SIGHT = {
                 "POI_TYP": 33,
                 "LAND": "Tirol",
                 "BILDUNG": 0,
-                "JARPRO15": 1
+                "JARPRO15": 1,
+                "typ":Wasserfall
             },
             "geometry": {
                 "type": "Point",
@@ -144,7 +151,8 @@ const SIGHT = {
                 "POI_TYP": 33,
                 "LAND": "Tirol",
                 "BILDUNG": 0,
-                "JARPRO15": 1
+                "JARPRO15": 1,
+                "typ":Wasserfall
             },
             "geometry": {
                 "type": "Point",
@@ -162,7 +170,8 @@ const SIGHT = {
                 "POI_TYP": 28,
                 "LAND": "Tirol",
                 "BILDUNG": 0,
-                "JARPRO15": 1
+                "JARPRO15": 1,
+                "typ":Huette
             },
             "geometry": {
                 "type": "Point",
@@ -180,7 +189,8 @@ const SIGHT = {
                 "POI_TYP": 27,
                 "LAND": "Tirol",
                 "BILDUNG": 0,
-                "JARPRO15": 1
+                "JARPRO15": 1,
+                "typ":Huette
             },
             "geometry": {
                 "type": "Point",
@@ -198,7 +208,8 @@ const SIGHT = {
                 "POI_TYP": 27,
                 "LAND": "Tirol",
                 "BILDUNG": 0,
-                "JARPRO15": 1
+                "JARPRO15": 1,
+                "typ":Huette
             },
             "geometry": {
                 "type": "Point",
@@ -216,7 +227,8 @@ const SIGHT = {
                 "POI_TYP": 21,
                 "LAND": "Tirol",
                 "BILDUNG": 0,
-                "JARPRO15": 1
+                "JARPRO15": 1,
+                "typ":Parkmoeglichkeit
             },
             "geometry": {
                 "type": "Point",
@@ -234,7 +246,8 @@ const SIGHT = {
                 "POI_TYP": 32,
                 "LAND": "Tirol",
                 "BILDUNG": 0,
-                "JARPRO15": 1
+                "JARPRO15": 1,
+                "typ":mountainbikeroute
             },
             "geometry": {
                 "type": "Point",
@@ -252,7 +265,8 @@ const SIGHT = {
                 "POI_TYP": 28,
                 "LAND": "Tirol",
                 "BILDUNG": 0,
-                "JARPRO15": 1
+                "JARPRO15": 1,
+                "typ":Biwak
             },
             "geometry": {
                 "type": "Point",
@@ -270,7 +284,8 @@ const SIGHT = {
                 "POI_TYP": 37,
                 "LAND": "Tirol",
                 "BILDUNG": 0,
-                "JARPRO15": 1
+                "JARPRO15": 1,
+                "typ":Aussichtspunkt
             },
             "geometry": {
                 "type": "Point",
@@ -288,7 +303,9 @@ const SIGHT = {
                 "POI_TYP": 37,
                 "LAND": "Tirol",
                 "BILDUNG": 0,
-                "JARPRO15": 1
+                "JARPRO15": 1,
+                "typ":Wasserfall
+            
             },
             "geometry": {
                 "type": "Point",
@@ -306,7 +323,9 @@ const SIGHT = {
                 "POI_TYP": 24,
                 "LAND": "Kärnten",
                 "BILDUNG": 0,
-                "JARPRO15": null
+                "JARPRO15": null,
+                "typ":Bergbahn
+
             },
             "geometry": {
                 "type": "Point",
@@ -324,7 +343,8 @@ const SIGHT = {
                 "POI_TYP": 27,
                 "LAND": "Kärnten",
                 "BILDUNG": 0,
-                "JARPRO15": null
+                "JARPRO15": null,
+                "typ":Huette
             },
             "geometry": {
                 "type": "Point",
@@ -342,7 +362,8 @@ const SIGHT = {
                 "POI_TYP": 20,
                 "LAND": "Kärnten",
                 "BILDUNG": 0,
-                "JARPRO15": null
+                "JARPRO15": null,
+                "typ":Hotel
             },
             "geometry": {
                 "type": "Point",
@@ -360,7 +381,8 @@ const SIGHT = {
                 "POI_TYP": 26,
                 "LAND": "Kärnten",
                 "BILDUNG": 0,
-                "JARPRO15": null
+                "JARPRO15": null,
+                "typ":Huette
             },
             "geometry": {
                 "type": "Point",
@@ -378,7 +400,8 @@ const SIGHT = {
                 "POI_TYP": 28,
                 "LAND": "Kärnten",
                 "BILDUNG": 0,
-                "JARPRO15": null
+                "JARPRO15": null,
+                "typ":Huette
             },
             "geometry": {
                 "type": "Point",
@@ -396,7 +419,9 @@ const SIGHT = {
                 "POI_TYP": 28,
                 "LAND": "Kärnten",
                 "BILDUNG": 0,
-                "JARPRO15": null
+                "JARPRO15": null,
+                "typ":Huette
+            
             },
             "geometry": {
                 "type": "Point",
@@ -414,7 +439,9 @@ const SIGHT = {
                 "POI_TYP": 26,
                 "LAND": "Kärnten",
                 "BILDUNG": 0,
-                "JARPRO15": null
+                "JARPRO15": null,
+                "typ":Huette
+
             },
             "geometry": {
                 "type": "Point",
@@ -432,7 +459,8 @@ const SIGHT = {
                 "POI_TYP": 21,
                 "LAND": "Kärnten",
                 "BILDUNG": 0,
-                "JARPRO15": null
+                "JARPRO15": null,
+                "typ":Parkmoeglichkeit
             },
             "geometry": {
                 "type": "Point",
@@ -450,7 +478,8 @@ const SIGHT = {
                 "POI_TYP": 11,
                 "LAND": "Kärnten",
                 "BILDUNG": 0,
-                "JARPRO15": null
+                "JARPRO15": null,
+                "typ":Infostelle
             },
             "geometry": {
                 "type": "Point",
@@ -468,7 +497,8 @@ const SIGHT = {
                 "POI_TYP": 10,
                 "LAND": "Kärnten",
                 "BILDUNG": 1,
-                "JARPRO15": null
+                "JARPRO15": null,
+                "typ":Infostelle
             },
             "geometry": {
                 "type": "Point",
@@ -486,7 +516,8 @@ const SIGHT = {
                 "POI_TYP": 10,
                 "LAND": "Kärnten",
                 "BILDUNG": 1,
-                "JARPRO15": null
+                "JARPRO15": null,
+                "typ":Verwaltung
             },
             "geometry": {
                 "type": "Point",
@@ -504,7 +535,8 @@ const SIGHT = {
                 "POI_TYP": 11,
                 "LAND": "Kärnten",
                 "BILDUNG": 0,
-                "JARPRO15": null
+                "JARPRO15": null,
+                "typ":Infostelle
             },
             "geometry": {
                 "type": "Point",
@@ -522,7 +554,8 @@ const SIGHT = {
                 "POI_TYP": 11,
                 "LAND": "Kärnten",
                 "BILDUNG": 0,
-                "JARPRO15": null
+                "JARPRO15": null,
+                "typ":Infostelle
             },
             "geometry": {
                 "type": "Point",
@@ -540,7 +573,8 @@ const SIGHT = {
                 "POI_TYP": 24,
                 "LAND": "Kärnten",
                 "BILDUNG": 0,
-                "JARPRO15": null
+                "JARPRO15": null,
+                "typ":Bergbahn
             },
             "geometry": {
                 "type": "Point",
@@ -558,7 +592,8 @@ const SIGHT = {
                 "POI_TYP": 28,
                 "LAND": "Kärnten",
                 "BILDUNG": 0,
-                "JARPRO15": null
+                "JARPRO15": null,
+                "typ":Biwak
             },
             "geometry": {
                 "type": "Point",
@@ -576,7 +611,8 @@ const SIGHT = {
                 "POI_TYP": 27,
                 "LAND": "Kärnten",
                 "BILDUNG": 0,
-                "JARPRO15": null
+                "JARPRO15": null,
+                "typ":Huette
             },
             "geometry": {
                 "type": "Point",
@@ -594,7 +630,8 @@ const SIGHT = {
                 "POI_TYP": 27,
                 "LAND": "Kärnten",
                 "BILDUNG": 0,
-                "JARPRO15": null
+                "JARPRO15": null,
+                "typ":Huette
             },
             "geometry": {
                 "type": "Point",
@@ -612,7 +649,8 @@ const SIGHT = {
                 "POI_TYP": 28,
                 "LAND": "Kärnten",
                 "BILDUNG": 0,
-                "JARPRO15": null
+                "JARPRO15": null,
+                "typ":Biwak
             },
             "geometry": {
                 "type": "Point",
@@ -630,7 +668,8 @@ const SIGHT = {
                 "POI_TYP": 21,
                 "LAND": "Kärnten",
                 "BILDUNG": 0,
-                "JARPRO15": null
+                "JARPRO15": null,
+                "typ":Parkmoeglichkeit
             },
             "geometry": {
                 "type": "Point",
@@ -648,7 +687,8 @@ const SIGHT = {
                 "POI_TYP": 27,
                 "LAND": "Kärnten",
                 "BILDUNG": 0,
-                "JARPRO15": null
+                "JARPRO15": null,
+                "typ":Huette
             },
             "geometry": {
                 "type": "Point",
@@ -666,7 +706,8 @@ const SIGHT = {
                 "POI_TYP": 20,
                 "LAND": "Kärnten",
                 "BILDUNG": 0,
-                "JARPRO15": null
+                "JARPRO15": null,
+                "typ":Huette
             },
             "geometry": {
                 "type": "Point",
@@ -684,7 +725,8 @@ const SIGHT = {
                 "POI_TYP": 20,
                 "LAND": "Kärnten",
                 "BILDUNG": 0,
-                "JARPRO15": null
+                "JARPRO15": null,
+                "typ":Huette
             },
             "geometry": {
                 "type": "Point",
@@ -702,7 +744,8 @@ const SIGHT = {
                 "POI_TYP": 28,
                 "LAND": "Kärnten",
                 "BILDUNG": 0,
-                "JARPRO15": null
+                "JARPRO15": null,
+                "typ":Biwak
             },
             "geometry": {
                 "type": "Point",
@@ -720,7 +763,8 @@ const SIGHT = {
                 "POI_TYP": 12,
                 "LAND": "Kärnten",
                 "BILDUNG": 0,
-                "JARPRO15": null
+                "JARPRO15": null,
+                "typ":Themenweg
             },
             "geometry": {
                 "type": "Point",
@@ -738,7 +782,8 @@ const SIGHT = {
                 "POI_TYP": 12,
                 "LAND": "Kärnten",
                 "BILDUNG": 0,
-                "JARPRO15": null
+                "JARPRO15": null,
+                "typ":Themenweg
             },
             "geometry": {
                 "type": "Point",
@@ -756,7 +801,8 @@ const SIGHT = {
                 "POI_TYP": 20,
                 "LAND": "Kärnten",
                 "BILDUNG": 0,
-                "JARPRO15": null
+                "JARPRO15": null,
+                "typ":Huette
             },
             "geometry": {
                 "type": "Point",
@@ -774,7 +820,8 @@ const SIGHT = {
                 "POI_TYP": 20,
                 "LAND": "Kärnten",
                 "BILDUNG": 0,
-                "JARPRO15": null
+                "JARPRO15": null,
+                "typ":Aussichtspunkt
             },
             "geometry": {
                 "type": "Point",
@@ -792,7 +839,8 @@ const SIGHT = {
                 "POI_TYP": 12,
                 "LAND": "Kärnten",
                 "BILDUNG": 0,
-                "JARPRO15": null
+                "JARPRO15": null,
+                "typ":Themenweg
             },
             "geometry": {
                 "type": "Point",
@@ -810,7 +858,8 @@ const SIGHT = {
                 "POI_TYP": 12,
                 "LAND": "Kärnten",
                 "BILDUNG": 0,
-                "JARPRO15": null
+                "JARPRO15": null,
+                "typ":Wasserfall
             },
             "geometry": {
                 "type": "Point",
@@ -828,7 +877,8 @@ const SIGHT = {
                 "POI_TYP": 12,
                 "LAND": "Kärnten",
                 "BILDUNG": 0,
-                "JARPRO15": null
+                "JARPRO15": null,
+                "typ":Themenweg
             },
             "geometry": {
                 "type": "Point",
@@ -846,7 +896,8 @@ const SIGHT = {
                 "POI_TYP": 12,
                 "LAND": "Kärnten",
                 "BILDUNG": 0,
-                "JARPRO15": null
+                "JARPRO15": null,
+                "typ":Themenweg
             },
             "geometry": {
                 "type": "Point",
@@ -864,7 +915,8 @@ const SIGHT = {
                 "POI_TYP": 12,
                 "LAND": "Kärnten",
                 "BILDUNG": 0,
-                "JARPRO15": null
+                "JARPRO15": null,
+                "typ":Wasserfall
             },
             "geometry": {
                 "type": "Point",
@@ -882,7 +934,8 @@ const SIGHT = {
                 "POI_TYP": 12,
                 "LAND": "Kärnten",
                 "BILDUNG": 0,
-                "JARPRO15": null
+                "JARPRO15": null,
+                "typ":Themenweg
             },
             "geometry": {
                 "type": "Point",
@@ -900,7 +953,8 @@ const SIGHT = {
                 "POI_TYP": 12,
                 "LAND": "Kärnten",
                 "BILDUNG": 0,
-                "JARPRO15": null
+                "JARPRO15": null,
+                "typ":Huette
             },
             "geometry": {
                 "type": "Point",
@@ -918,7 +972,8 @@ const SIGHT = {
                 "POI_TYP": 12,
                 "LAND": "Kärnten",
                 "BILDUNG": 0,
-                "JARPRO15": null
+                "JARPRO15": null,
+                "typ":Themenweg
             },
             "geometry": {
                 "type": "Point",
@@ -936,7 +991,8 @@ const SIGHT = {
                 "POI_TYP": 12,
                 "LAND": "Kärnten",
                 "BILDUNG": 0,
-                "JARPRO15": null
+                "JARPRO15": null,
+                "typ":Themenweg
             },
             "geometry": {
                 "type": "Point",
@@ -954,7 +1010,8 @@ const SIGHT = {
                 "POI_TYP": 26,
                 "LAND": "Kärnten",
                 "BILDUNG": 0,
-                "JARPRO15": null
+                "JARPRO15": null,
+                "typ":Huette
             },
             "geometry": {
                 "type": "Point",
@@ -972,7 +1029,8 @@ const SIGHT = {
                 "POI_TYP": 12,
                 "LAND": "Kärnten",
                 "BILDUNG": 0,
-                "JARPRO15": null
+                "JARPRO15": null,
+                
             },
             "geometry": {
                 "type": "Point",
