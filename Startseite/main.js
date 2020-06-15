@@ -58,16 +58,17 @@ icon: siteIcon
     }
 }).addTo(overlay.sight);
 
-let wege = L.geoJson(WEGE, {
-    pointToLayer: function(point, latlng) {
-        let marker = L.marker(latlng);
-        console.log("Point", point);
-        marker.bindPopup(`<h3>${point.properties.NAME}</h3>
-        `);
-        return marker;
-    }
-}).addTo(map);
+//let wege = L.geoJson(WEGE, {
+//   pointToLayer: function(point, latlng) {
+//        let marker = L.marker(latlng);
+//        console.log("Point", point);
+//        marker.bindPopup(`<h3>${point.properties.NAME}</h3>
+//       `);
+//       return marker;
+//   }
+//}).addTo(overlay.wege);
+//overlay.wege.addTo(map);
 
-
-
-
+for (const rundweg of WEGE) {
+    console.log(rundweg);
+};
