@@ -58,3 +58,5 @@ icon: siteIcon
     }
 }).addTo(overlay.sight);
 overlay.sight.addTo(map);
+
+
