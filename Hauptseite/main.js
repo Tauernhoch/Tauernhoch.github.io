@@ -50,8 +50,8 @@ let aussengrenze = L.geoJSON(GRENZE).addTo(overlay.borders);
 
 
 
-let radln = L.geoJSON(EBIKE).addTo(overlay.ebikes);
-overlay.ebikes.addTo(map);
+let radln = L.geoJSON(bike).addTo(overlay.bikes);
+overlay.bikes.addTo(map);
 // console.log(GRENZE);
 // console.log(radln);
 
@@ -203,9 +203,10 @@ let huetten = L.GPX("OEAV_Berghuetten.gpx", {
       },
      
     }
-  }).on('loaded', function (e) {
+  })
+  huetten.on('loaded', function (e) {
     var gpx = e.target;
-    map.fitBounds(gpx.getBounds());
+    // map.fitBounds(gpx.getBounds());
   }).addTo(map);
 
 //   https://github.com/mpetazzoni/leaflet-gpx
