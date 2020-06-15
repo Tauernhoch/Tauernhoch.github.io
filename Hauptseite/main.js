@@ -51,31 +51,42 @@ let aussengrenze = L.geoJSON(GRENZE).addTo(overlay.borders);
 
 
 //ebike Routen
-let radln = L.geoJSON(BIKE,{
+let radln = L.geoJSON(BIKE, {
     color: "yellow",
-    }).addTo(overlay.ebikes);
+}).addTo(overlay.ebikes);
 overlay.ebikes.addTo(map);
+
+//zu ebikes noch Infos als Marker hinzufügen möglich?
 
 //console.log (EBIKE)
 
 
+//Großglockner Normalweg
 let gpx = new L.GPX(`Glockner.gpx`, {
     async: true,
     marker_options: {
         startIconUrl: 'icons/climbing.png',
         endIconUrl: 'icons/climbing.png',
-
     },
     polyline_options: {
         color: "red",
         dashArray: [2, 5]
     }
 });
-gpx.on("loaded", function (evt) {
 
+gpx.on("loaded", function (evt) {
+    map.fitBounds(evt.target.getBounds());
+    controlElevation.clear();
+    controlElevation.load(`Glockner.gpx`);
 }).addTo(overlay.Großglockner);
 
 
+let controlElevation = L.control.elevation({
+    theme: "steelblue-theme",
+    detached: true, 
+    elevationDiv: "#profile",
+    followMarker: false
+}).addTo(map);
 
 
 // let gpx5 = new L.GPX(`venediger_nordgrat_track`, {
@@ -90,6 +101,7 @@ gpx.on("loaded", function (evt) {
 // }).addTo(map);
 
 
+//Wanderweg Hoch Tirol
 let gpx2 = new L.GPX(`Hoch_Tirol/TK_01_Hoch_Tirol_3.gpx`, {
     async: true,
     marker_options: {
@@ -108,7 +120,6 @@ let gpx2 = new L.GPX(`Hoch_Tirol/TK_01_Hoch_Tirol_3.gpx`, {
 });
 gpx2.on("loaded", function (evt) {
     map.fitBounds(evt.target.getBounds());
-
 
 }).addTo(overlay.Hoch_Tirol);
 
