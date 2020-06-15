@@ -2,7 +2,7 @@ let startLayer = L.tileLayer.provider("BasemapAT.grau");
 
 let map = L.map("map", {
     center: [47, 12.5],
-    zoom: 11,
+    zoom: 9,
     layers: [
         startLayer
     ]
@@ -74,13 +74,16 @@ let gpx = new L.GPX(`Glockner.gpx`, {
     }
 });
 
+//extremer Zoom liegt glaube ich an folgendem Absatz mit den fitBounds und der Control Elevation... 
+//ist bisschen blöd, weil ich nen Überblick cool fände, auf der anderen Seite können wirs im Bericht bestimmt auch begründen
 gpx.on("loaded", function (evt) {
-    map.fitBounds(evt.target.getBounds());
-    controlElevation.clear();
-    controlElevation.load(`Glockner.gpx`);
+   //map.fitBounds(evt.target.getBounds());
+controlElevation.clear();
+controlElevation.load(`Glockner.gpx`);
 }).addTo(overlay.Großglockner);
+overlay.Großglockner.addTo(map);
 
-
+//Elevation Control müssen wir nicht lassen, v.a. weil ich nicht weiß, ob sich das evtl. an- und ausschalten lassen kann, dass des nicht immer da ist
 let controlElevation = L.control.elevation({
     theme: "steelblue-theme",
     detached: true, 
@@ -117,11 +120,18 @@ let gpx2 = new L.GPX(`Hoch_Tirol/TK_01_Hoch_Tirol_3.gpx`, {
         color: "black",
         dashArray: [2, 5]
     }
-});
-gpx2.on("loaded", function (evt) {
-    map.fitBounds(evt.target.getBounds());
+// });
+
+
+// gpx2.on("loaded", function (evt) {
+//     map.fitBounds(evt.target.getBounds());
 
 }).addTo(overlay.Hoch_Tirol);
+overlay.Hoch_Tirol.addTo(map);
+
+
+
+
 
 let gpx3 = new L.GPX(`Skitour/TK_02_GrosserGeiger.gpx`, {
     async: true,
@@ -160,7 +170,7 @@ let gpx4 = new L.GPX("OEAV_Berghuetten.gpx", {
 
 gpx4.on("loaded", function (evt) {
     let marker = L.marker([lat, lng])
-    map.fitBounds(evt.target.getBounds());
+    //map.fitBounds(evt.target.getBounds());
 }).addTo(overlay.Huetten);
 
 //     }
