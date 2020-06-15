@@ -16,7 +16,7 @@ let overlay = {
     Hoch_Tirol: L.featureGroup(),
     Großglockner: L.featureGroup(),
     Skitour: L.featureGroup(),
-    Hütten: L.featureGroup()
+    Huetten: L.featureGroup()
 }
 
 
@@ -35,7 +35,7 @@ L.control.layers({
     "Wanderweg Hoch Tirol": overlay.Hoch_Tirol,
     "Großglockner Normalweg": overlay.Großglockner,
     "Skitour Großer Geiger": overlay.Skitour,
-    "Unterkünfte": overlay.Hütten,
+    "Unterkünfte": overlay.Huetten,
 }).addTo(map);
 
 
