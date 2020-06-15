@@ -199,19 +199,34 @@ gpx4.on("loaded", function (evt) {
 
 
 
-let huetten = L.GPX("OEAV_Berghuetten.gpx", {
+// let huetten = L.GPX("OEAV_Berghuetten.gpx", {
+//     async: true,
+//     marker_options: {
+//         wptIconUrls: {
+//             'name': 'icons/hut.png',
+
+//         },
+
+//     }
+// })
+// huetten.on('loaded', function (e) {
+//     var gpx = e.target;
+//     // map.fitBounds(gpx.getBounds());
+// }).addTo(map);
+
+
+new L.GPX("OEAV_Berghuetten.gpx", {
     async: true,
     marker_options: {
-        wptIconUrls: {
-            'name': 'icons/hut.png',
-
-        },
-
+      wptIconUrls: {
+        '': 'icons/hut.png',
+      },
+      shadowUrl: 'http://github.com/mpetazzoni/leaflet-gpx/raw/master/pin-shadow.png'
     }
-})
-huetten.on('loaded', function (e) {
+  }).on('loaded', function (e) {
     var gpx = e.target;
-    // map.fitBounds(gpx.getBounds());
-}).addTo(map);
+    //map.fitBounds(gpx.getBounds());
+  }).addTo(overlay.Huetten);
+  overlay.Huetten.addTo(map);
 
 //   https://github.com/mpetazzoni/leaflet-gpx
