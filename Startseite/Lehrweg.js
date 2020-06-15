@@ -1,4 +1,4 @@
-{
+const LEHRWEG = {
     "type": "FeatureCollection",
     "name": "Lehrweg",
     "crs": {

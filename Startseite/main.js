@@ -69,6 +69,10 @@ icon: siteIcon
 //}).addTo(overlay.wege);
 //overlay.wege.addTo(map);
 
-for (const rundweg of WEGE) {
-    console.log(rundweg);
-};
+let walk = L.geoJson(LEHRWEG, {
+    pointToLayer: function(point, latlng) {
+        let marker = L.marker(latlng);
+        console.log("Point", point);
+        
+    }
+}).addTo(map)
