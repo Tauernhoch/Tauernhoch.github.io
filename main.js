@@ -26,7 +26,7 @@ L.control.layers({
 }, {
     "Nationalpark Hohe Tauern": overlay.borders,
     "Points of interest": overlay.sight,
-    "Lehrwege des Nationalparks": overlay.wege,
+    // "Lehrwege des Nationalparks": overlay.wege,
 }).addTo(map);
 
 //Maßstab
