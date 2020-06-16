@@ -15,6 +15,7 @@ let overlay = {
     borders: L.featureGroup(),
     ebikes: L.featureGroup(),
     Hoch_Tirol: L.featureGroup(),
+    Hoch_Tirol2: L.featureGroup(),
     Großglockner: L.featureGroup(),
     Skitour: L.featureGroup(),
     Huetten: L.featureGroup(),
@@ -35,6 +36,7 @@ L.control.layers({
     "Nationalpark Hohe Tauern": overlay.borders,
     "E-Bike Routen": overlay.ebikes,
     "Wanderweg Hoch Tirol": overlay.Hoch_Tirol,
+    "Wanderweg Hoch Tirol2": overlay.Hoch_Tirol2,
     "Großglockner Normalweg": overlay.Großglockner,
     "Skitour Großer Geiger": overlay.Skitour,
     "Unterkünfte": overlay.Huetten,
@@ -59,10 +61,10 @@ let radln = L.geoJSON(BIKE, {
 overlay.ebikes.addTo(map);
 
 //ebike Routen
-let lehr = L.geoJSON(LEHRWEG, {
-    color: "green",
-}).addTo(map);
-// overlay.lehre.addTo(map);
+// let lehr = L.geoJSON(LEHRWEG, {
+//     color: "green",
+// }).addTo(map);
+// // overlay.lehre.addTo(map);
 
 
 //zu ebikes noch Infos als Marker hinzufügen möglich?
@@ -158,6 +160,7 @@ let gpx5 = new L.GPX(`venediger_nordgrat_track.gpx`, {
     marker_options: {
         startIconUrl: 'icons/climbing.png',
         endIconUrl: 'icons/climbing.png'},
+        iconSize: [1, 37],
     polyline_options: {
         color: "red",
         dashArray: [2, 5]
@@ -166,6 +169,49 @@ let gpx5 = new L.GPX(`venediger_nordgrat_track.gpx`, {
 gpx5.on("loaded", function(evt) {
     // map.fitBounds(evt.target.getBounds());
 }).addTo(map);
+
+
+let gpx14 = new L.GPX(`Hoch_Tirol/TK_01_Hoch_Tirol_1.gpx`, {
+    async: true,
+    marker_options: {
+
+
+        startIconUrl: 'icons/hiking2.png',
+        endIconUrl: 'icons/hiking2.png',
+        shadowUrl: null,
+        // iconSize: [100, 37],
+    },
+
+    polyline_options: {
+        color: "black",
+        dashArray: [2, 5]
+    }
+// });
+// gpx11.on("loaded", function (evt) {
+
+}).addTo(overlay.Hoch_Tirol);
+overlay.Hoch_Tirol.addTo(map);
+
+let gpx13 = new L.GPX(`Hoch_Tirol/TK_01_Hoch_Tirol_2.gpx`, {
+    async: true,
+    marker_options: {
+
+
+        startIconUrl: 'icons/hiking2.png',
+        endIconUrl: 'icons/hiking2.png',
+        shadowUrl: null,
+        // iconSize: [100, 37],
+    },
+
+    polyline_options: {
+        color: "black",
+        dashArray: [2, 5]
+    }
+// });
+// gpx11.on("loaded", function (evt) {
+
+}).addTo(overlay.Hoch_Tirol);
+overlay.Hoch_Tirol.addTo(map);
 
 
 //Wanderweg Hoch Tirol
@@ -177,18 +223,36 @@ let gpx2 = new L.GPX(`Hoch_Tirol/TK_01_Hoch_Tirol_3.gpx`, {
         startIconUrl: 'icons/hiking2.png',
         endIconUrl: 'icons/hiking2.png',
         shadowUrl: null,
-        iconSize: [1, 37],
+        // iconSize: [100, 37],
     },
 
     polyline_options: {
         color: "black",
         dashArray: [2, 5]
     }
-// });
 
 
-// gpx2.on("loaded", function (evt) {
-//     map.fitBounds(evt.target.getBounds());
+}).addTo(overlay.Hoch_Tirol);
+overlay.Hoch_Tirol.addTo(map);
+
+
+//Wanderweg Hoch Tirol
+let gpx22 = new L.GPX(`Hoch_Tirol/TK_01_Hoch_Tirol_4.gpx`, {
+    async: true,
+    marker_options: {
+
+
+        startIconUrl: 'icons/hiking2.png',
+        endIconUrl: 'icons/hiking2.png',
+        shadowUrl: null,
+        // iconSize: [100, 37],
+    },
+
+    polyline_options: {
+        color: "black",
+        dashArray: [2, 5]
+    }
+
 
 }).addTo(overlay.Hoch_Tirol);
 overlay.Hoch_Tirol.addTo(map);
@@ -197,20 +261,68 @@ overlay.Hoch_Tirol.addTo(map);
 
 
 
-let gpx3 = new L.GPX(`Skitour/TK_02_GrosserGeiger.gpx`, {
+
+let gpx12 = new L.GPX(`Hoch_Tirol/TK_01_Hoch_Tirol_5.gpx`, {
     async: true,
     marker_options: {
-        startIconUrl: 'icons/skiing.png',
-        endIconUrl: 'icons/skiing.png',
+
+
+        startIconUrl: 'icons/hiking2.png',
+        endIconUrl: 'icons/hiking2.png',
+        shadowUrl: null,
+        // iconSize: [100, 37],
     },
+
+    polyline_options: {
+        color: "black",
+        dashArray: [2, 5]
+    }
+// });
+// gpx11.on("loaded", function (evt) {
+
+}).addTo(overlay.Hoch_Tirol);
+overlay.Hoch_Tirol.addTo(map);
+
+
+
+
+
+
+let gpx10 = new L.GPX(`Hoch_Tirol/TK_01_Hoch_Tirol_6.gpx`, {
+    async: true,
+    marker_options: {
+
+
+        startIconUrl: 'icons/hiking2.png',
+        endIconUrl: 'icons/hiking2.png',
+        shadowUrl: null,
+        // iconSize: [100, 37],
+    },
+
     polyline_options: {
         color: "black",
         dashArray: [2, 5]
     }
 });
-gpx3.on("loaded", function (evt) {
+gpx10.on("loaded", function (evt) {
+}).addTo(overlay.Hoch_Tirol);
+overlay.Hoch_Tirol.addTo(map);
 
-}).addTo(overlay.Skitour);
+
+// let gpx3 = new L.GPX(`Skitour/TK_02_GrosserGeiger.gpx`, {
+//     async: true,
+//     marker_options: {
+//         startIconUrl: 'icons/skiing.png',
+//         endIconUrl: 'icons/skiing.png',
+//     },
+//     polyline_options: {
+//         color: "black",
+//         dashArray: [2, 5]
+//     }
+// });
+// gpx3.on("loaded", function (evt) {
+
+// }).addTo(overlay.Skitour);
 
 
 
