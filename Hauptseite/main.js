@@ -34,12 +34,12 @@ L.control.layers({
         L.tileLayer.provider("BasemapAT.overlay")
     ])
 }, {
-    "Unterkünfte": hutGroup,
+    // "Unterkünfte": hutGroup,
     "Nationalpark Hohe Tauern": overlay.borders,
     "E-Bike Routen": overlay.ebikes,
     "Wanderweg Hoch Tirol": overlay.Hoch_Tirol,
     "Bergsteigen": overlay.Großglockner,
-    "Unterkünfte": overlay.Huetten,
+    // "Unterkünfte": overlay.Huetten,
     "Kirchen und Mühlen": overlay.SIGHT,
 }).addTo(map);
 
