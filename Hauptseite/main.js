@@ -144,7 +144,8 @@ let gpx14 = new L.GPX(`Hoch_Tirol/TK_01_Hoch_Tirol_1.gpx`, {
         startIconUrl: 'icons/hiking2.png',
         endIconUrl: 'icons/hiking2.png',
         shadowUrl: null,
-        // iconSize: [100, 37],
+         iconSize: [37, 37],
+         
     },
 
     polyline_options: {
