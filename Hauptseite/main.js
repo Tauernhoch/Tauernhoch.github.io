@@ -12,7 +12,7 @@ let hutGroup = L.markerClusterGroup().addTo(map);
 
 
 let overlay = {
-    // hutGroup = L.markerClusterGroup(),
+    // hutGroup = L.featureGroup(),
     borders: L.featureGroup(),
     ebikes: L.featureGroup(),
     Hoch_Tirol: L.featureGroup(),
@@ -287,6 +287,7 @@ let unterk = L.geoJson(Huetten, {
     // overlay.Huetten.addTo(map);
 
 }).addTo(hutGroup)
+// hutGroup.addTo(overlay)
 
 unterk.on("data:loaded", function () {
     hutGroup.addLayer(unterk);
