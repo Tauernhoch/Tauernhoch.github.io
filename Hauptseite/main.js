@@ -15,7 +15,7 @@ let overlay = {
     borders: L.featureGroup(),
     ebikes: L.featureGroup(),
     Hoch_Tirol: L.featureGroup(),
-    Hoch_Tirol2: L.featureGroup(),
+  
     Großglockner: L.featureGroup(),
     Skitour: L.featureGroup(),
     Huetten: L.featureGroup(),
@@ -36,8 +36,8 @@ L.control.layers({
     "Nationalpark Hohe Tauern": overlay.borders,
     "E-Bike Routen": overlay.ebikes,
     "Wanderweg Hoch Tirol": overlay.Hoch_Tirol,
-    "Wanderweg Hoch Tirol2": overlay.Hoch_Tirol2,
-    "Großglockner Normalweg": overlay.Großglockner,
+    
+    "Bergsteigen": overlay.Großglockner,
     "Skitour Großer Geiger": overlay.Skitour,
     "Unterkünfte": overlay.Huetten,
     "Lehrwege": overlay.lehre,
@@ -73,6 +73,25 @@ overlay.ebikes.addTo(map);
 
 
 //Großglockner Normalweg
+
+
+let gpx5 = new L.GPX(`venediger_nordgrat_track.gpx`, {
+    async: true,
+    marker_options: {
+        startIconUrl: 'icons/climbing.png',
+        endIconUrl: 'icons/climbing.png'},
+        iconSize: [1, 37],
+    polyline_options: {
+        color: "red",
+        dashArray: [2, 5]
+    }
+});
+gpx5.on("loaded", function(evt) {
+    // map.fitBounds(evt.target.getBounds());
+}).addTo(overlay.Großglockner);
+
+
+
 let gpx = new L.GPX(`Glockner.gpx`, {
     async: true,
     marker_options: {
@@ -155,20 +174,7 @@ let controlElevation = L.control.elevation({
 
 
 
-let gpx5 = new L.GPX(`venediger_nordgrat_track.gpx`, {
-    async: true,
-    marker_options: {
-        startIconUrl: 'icons/climbing.png',
-        endIconUrl: 'icons/climbing.png'},
-        iconSize: [1, 37],
-    polyline_options: {
-        color: "red",
-        dashArray: [2, 5]
-    }
-});
-gpx5.on("loaded", function(evt) {
-    // map.fitBounds(evt.target.getBounds());
-}).addTo(map);
+
 
 
 let gpx14 = new L.GPX(`Hoch_Tirol/TK_01_Hoch_Tirol_1.gpx`, {
@@ -329,25 +335,25 @@ overlay.Hoch_Tirol.addTo(map);
 
 
 
-let gpx4 = new L.GPX("OEAV_Berghuetten.gpx", {
-    async: true,
-    // marker_options: {
-    //     IconUrl: 'icons/hut.png',
-    pointToLayer: function (point, latlng) {
-        // let siteIcon2 = L.icon({
-        //     iconUrl: 'icons/hut.png',
-        //     iconSize: [32, 32]
-        // });
-        let marker = L.marker(latlng, {
-            //icon: siteIcon2
-        });
-    }
-});
+// let gpx4 = new L.GPX("OEAV_Berghuetten.gpx", {
+//     async: true,
+//     // marker_options: {
+//     //     IconUrl: 'icons/hut.png',
+//     pointToLayer: function (point, latlng) {
+//         // let siteIcon2 = L.icon({
+//         //     iconUrl: 'icons/hut.png',
+//         //     iconSize: [32, 32]
+//         // });
+//         let marker = L.marker(latlng, {
+//             //icon: siteIcon2
+//         });
+//     }
+// });
 
-gpx4.on("loaded", function (evt) {
-    let marker = L.marker([lat, lng])
-    //map.fitBounds(evt.target.getBounds());
-}).addTo(overlay.Huetten);
+// gpx4.on("loaded", function (evt) {
+//     let marker = L.marker([lat, lng])
+//     //map.fitBounds(evt.target.getBounds());
+// }).addTo(overlay.Huetten);
 
 
 
