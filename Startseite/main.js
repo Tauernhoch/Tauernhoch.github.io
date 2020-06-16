@@ -61,4 +61,4 @@ icon: siteIcon
 overlay.sight.addTo(map);
 
 
-console.log (SIGHT);
+//console.log (SIGHT);
