@@ -8,7 +8,6 @@ let map = L.map("map", {
     ]
 });
 
-let hutGroup = L.markerClusterGroup().addTo(map);
 
 //let bikekGroup = L.featureGroup().addTo(map);
 
@@ -16,12 +15,12 @@ let overlay = {
     borders: L.featureGroup(),
     ebikes: L.featureGroup(),
     Hoch_Tirol: L.featureGroup(),
-  
-    Großglockner: L.featureGroup(),
-    Skitour: L.featureGroup(),
     Huetten: L.featureGroup(),
-    lehre: L.featureGroup()
+    Großglockner: L.featureGroup(),
+
+    SIGHT: L.featureGroup()
 }
+let hutGroup = L.markerClusterGroup().addTo(map);
 
 
 L.control.layers({
@@ -39,9 +38,9 @@ L.control.layers({
     "Wanderweg Hoch Tirol": overlay.Hoch_Tirol,
     
     "Bergsteigen": overlay.Großglockner,
-    "Skitour Großer Geiger": overlay.Skitour,
+   
     "Unterkünfte": overlay.Huetten,
-    "Lehrwege": overlay.lehre,
+    "Kirchen und Mühlen": overlay.SIGHT,
 }).addTo(map);
 
 
@@ -68,29 +67,13 @@ overlay.ebikes.addTo(map);
 
 
 
- //console.log("Point", point);
- 
-//ebike Routen
-// let lehr = L.geoJSON(LEHRWEG, {
-//     color: "green",
-// }).addTo(map);
-// // overlay.lehre.addTo(map);
-
-
-//zu ebikes noch Infos als Marker hinzufügen möglich?
-
-//console.log (EBIKE)
-
-
-//Großglockner Normalweg
-
 
 let gpx5 = new L.GPX(`venediger_nordgrat_track.gpx`, {
     async: true,
     marker_options: {
         startIconUrl: 'icons/climbing.png',
         endIconUrl: 'icons/climbing.png'},
-        iconSize: [1, 37],
+        iconSize: [32, 32],
     polyline_options: {
         color: "red",
         dashArray: [2, 5]
@@ -123,42 +106,7 @@ let gpx = new L.GPX(`Glockner.gpx`, {
     }
 });
 
-// zweite möglichkeit für den Weg
-// let gpx6 = new L.GPX("Glockner.gpx", {
-//     async: true,
-//   //marker_options: {
-//   pointToLayer: function (point, latlng) {
-//     //    let siteIcon2 = L.icon({
-//     //         iconUrl: 'icons/hut.png',
-//     //          iconSize: [32, 32]
-//     //});
-//          let marker = L.marker(latlng, {
-//              //icon: siteIcon2
-//          });
-//      }
-//  });
 
-//  gpx6.on("loaded", function (evt) {
-//     let marker = L.marker([lat, lng])
-//     //map.fitBounds(evt.target.getBounds());
-// }).addTo(overlay.Großglockner);
-
-
-
-
-// new L.GPX("Glockner.gpx", {
-//     async: true,
-//     marker_options: {
-//       wptIconUrls: {
-//         '': 'icons/hut.png',
-//       },
-//   shadowUrl: 'http://github.com/mpetazzoni/leaflet-gpx/raw/master/pin-shadow.png'
-//     }
-//   }).on('loaded', function (e) {
-//    let gpx = e.target;
-//     //map.fitBounds(gpx.getBounds());
-//   }).addTo(overlay.Großglockner);
-//   overlay.Großglockner.addTo(map);
 
 
 
@@ -346,21 +294,77 @@ overlay.Hoch_Tirol.addTo(map);
 
 
 
-new L.GPX("OEAV_Berghuetten.gpx", {
-    async: true,
-    marker_options: {
-      wptIconUrls: {
-        '': 'icons/hut.png',
-      },
-    //   shadowUrl: 'http://github.com/mpetazzoni/leaflet-gpx/raw/master/pin-shadow.png'
-    }
-  }).on('loaded', function (e) {
-    var gpx = e.target;
-    //map.fitBounds(gpx.getBounds());
-  }).addTo(overlay.Huetten);
+// new L.GPX("OEAV_Berghuetten.gpx", {
+//     async: true,
+//     marker_options: {
+//       wptIconUrls: {
+//         '': 'icons/hut.png',
+//       },
+//     //   shadowUrl: 'http://github.com/mpetazzoni/leaflet-gpx/raw/master/pin-shadow.png'
+//     }
+//   }).on('loaded', function (e) {
+//     var gpx = e.target;
+//     //map.fitBounds(gpx.getBounds());
+//   }).addTo(overlay.Huetten);
 
   
 
 //   overlay.Huetten.addTo(map);
 
 //   https://github.com/mpetazzoni/leaflet-gpx
+
+
+let unterk = L.geoJson(Huetten, {
+    pointToLayer: function(point, latlng) {
+       let siteIcon = L.icon({
+            iconUrl: 'icons/hut2.png',
+            iconSize: [32, 32]
+        });
+       
+        let marker = L.marker(latlng,{
+icon: siteIcon
+        });
+        marker.bindPopup(`
+        <h3>${point.properties.NAME}</h3>
+        <li>Seehöhe: ${point.properties.SEEHOEHE} m</li>
+        <li>Land: ${point.properties.LAND}</li>
+        `);
+        return marker;
+    }
+}).addTo(overlay.Huetten);
+overlay.Huetten.addTo(map);
+
+
+
+
+
+
+let wf = L.geoJson(SIGHT, {
+    pointToLayer: function(point, latlng) {
+       let siteIcon = L.icon({
+            iconUrl: 'icons/prayer.png',
+            iconSize: [32, 32]
+        });
+       
+        let marker = L.marker(latlng,{
+icon: siteIcon
+        });
+        marker.bindPopup(`
+        <h3>${point.properties.NAME}</h3>
+        <li>Seehöhe: ${point.properties.SEEHOEHE} m</li>
+        <li>Land: ${point.properties.LAND}</li>
+        `);
+        return marker;
+    }
+}).addTo(overlay.SIGHT);
+ overlay.SIGHT.addTo(map);
+
+
+
+
+
+
+
+
+
+

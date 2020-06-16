@@ -1,4 +1,4 @@
-const SIGHT = {
+const WASSER = {
     "type": "FeatureCollection",
     "name": "geo_js",
     "crs": {
@@ -83,25 +83,8 @@ const SIGHT = {
                 "coordinates": [12.521456940492767, 46.990533220563876]
             }
         },
-        {
-            "type": "Feature",
-            "properties": {
-                "OBJECTID": 79,
-                "NAME": "Wallfahrtskirche Maria Schnee",
-                "SEEHOEHE": null,
-                "URL_INTERN": " ",
-                "URL_EXTERN": " ",
-                "POI_TYP": 13,
-                "LAND": "Tirol",
-                "BILDUNG": 0,
-                "JARPRO15": 1
-                
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [12.439915615174341, 47.007388861609023]
-            }
-        },
+        
+       
         {
             "type": "Feature",
             "properties": {
