@@ -1,8 +1,8 @@
 let startLayer = L.tileLayer.provider("BasemapAT.grau");
 
 let map = L.map("map", {
-    center: [47, 12.5],
-    zoom: 9,
+    center: [47, 12.75],
+    zoom: 10,
     layers: [
         startLayer
     ]
@@ -51,12 +51,12 @@ L.control.scale({
 
 
 let aussengrenze = L.geoJSON(GRENZE).addTo(overlay.borders);
-// overlay.borders.addTo(map);
+overlay.borders.addTo(map);
 
 
 //ebike Routen
 let radln = L.geoJSON(BIKE, {
-    color: "grey",
+    color: "brown",
     onEachFeature: function (feature, layer) {
         layer.bindPopup(`<h3>${feature.properties.NAME_DE}</h3>
         <li>Streckenlänge: ${feature.properties.SHAPE_LEN} m</li>  `);
@@ -114,7 +114,7 @@ let gpx = new L.GPX(`Glockner.gpx`, {
 //extremer Zoom liegt glaube ich an folgendem Absatz mit den fitBounds und der Control Elevation... 
 //ist bisschen blöd, weil ich nen Überblick cool fände, auf der anderen Seite können wirs im Bericht bestimmt auch begründen
 gpx.on("loaded", function (evt) {
-    map.fitBounds(evt.target.getBounds());
+    // map.fitBounds(evt.target.getBounds());
     controlElevation.clear();
     controlElevation.load(`Glockner.gpx`);
 }).addTo(overlay.Großglockner);
@@ -293,7 +293,7 @@ let unterk = L.geoJson(Huetten, {
 unterk.on("data:loaded", function () {
     hutGroup.addLayer(unterk);
     console.log('data loaded!');
-    map.fitBounds(hutGroup.getBounds());
+    // map.fitBounds(hutGroup.getBounds());
 });
 
 
