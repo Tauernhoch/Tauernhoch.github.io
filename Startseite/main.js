@@ -10,8 +10,8 @@ let map = L.map("map", {
 
 let overlay = {
     borders: L.featureGroup(),
-    sight:L.featureGroup(),
-    wege:L.featureGroup(),
+    sight: L.featureGroup(),
+    wege: L.featureGroup(),
 }
 
 L.control.layers({
@@ -25,9 +25,9 @@ L.control.layers({
     ])
 }, {
     "Nationalpark Hohe Tauern": overlay.borders,
-    "Points of interest":overlay.sight,
+    "Points of interest": overlay.sight,
     "Lehrwege des Nationalparks": overlay.wege,
-}).addTo(map); 
+}).addTo(map);
 
 //Maßstab
 L.control.scale({
@@ -35,19 +35,25 @@ L.control.scale({
 }).addTo(map);
 
 let aussengrenze = L.geoJSON(GRENZE).addTo(overlay.borders);
- overlay.borders.addTo(map);
+overlay.borders.addTo(map);
 
 //console.log(SIGHT)
 
 let sight = L.geoJson(SIGHT, {
-    pointToLayer: function(point, latlng) {
-       let siteIcon = L.icon({
-            iconUrl: 'icons/squirrel.png',
-            iconSize: [32, 32]
+    pointToLayer: function (point, latlng) {
+        let siteIcon = L.icon({
+            if (point.properties.POI_TYP === 20) {
+               
+                    iconUrl: 'icons/hut.png',
+                    iconSize: [32, 32]
+                          } else {
+                iconUrl: 'icons/squirrel.png',
+                iconSize: [32, 32]
+            }
         });
-       
-        let marker = L.marker(latlng,{
-icon: siteIcon
+
+        let marker = L.marker(latlng, {
+            icon: siteIcon
         });
         //console.log("Point", point);
         marker.bindPopup(`

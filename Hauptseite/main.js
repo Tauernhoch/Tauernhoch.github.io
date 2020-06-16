@@ -17,7 +17,8 @@ let overlay = {
     Hoch_Tirol: L.featureGroup(),
     Großglockner: L.featureGroup(),
     Skitour: L.featureGroup(),
-    Huetten: L.featureGroup()
+    Huetten: L.featureGroup(),
+    lehre: L.featureGroup()
 }
 
 
@@ -37,6 +38,7 @@ L.control.layers({
     "Großglockner Normalweg": overlay.Großglockner,
     "Skitour Großer Geiger": overlay.Skitour,
     "Unterkünfte": overlay.Huetten,
+    "Lehrwege": overlay.lehre,
 }).addTo(map);
 
 
@@ -55,6 +57,13 @@ let radln = L.geoJSON(BIKE, {
     color: "yellow",
 }).addTo(overlay.ebikes);
 overlay.ebikes.addTo(map);
+
+//ebike Routen
+let lehr = L.geoJSON(LEHRWEG, {
+    color: "green",
+}).addTo(map);
+// overlay.lehre.addTo(map);
+
 
 //zu ebikes noch Infos als Marker hinzufügen möglich?
 
