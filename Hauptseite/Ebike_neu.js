@@ -30,7 +30,7 @@ const BIKE = {
                 "URLINFO": " ",
                 "GSKEY": "NP_961",
                 "GEHZEIT": 0.0,
-                "SHAPE_LEN": 6054.576489
+                "SHAPE_LEN": 6054
             },
             "geometry": {
                 "type": "LineString",
@@ -408,7 +408,7 @@ const BIKE = {
                 "URLINFO": " ",
                 "GSKEY": "NP_1608",
                 "GEHZEIT": 0.0,
-                "SHAPE_LEN": 5754.131446
+                "SHAPE_LEN": 5754
             },
             "geometry": {
                 "type": "LineString",
@@ -2139,7 +2139,7 @@ const BIKE = {
                 "URLINFO": " ",
                 "GSKEY": "NP_1603",
                 "GEHZEIT": 0.0,
-                "SHAPE_LEN": 15130.10508
+                "SHAPE_LEN": 15130
             },
             "geometry": {
                 "type": "LineString",
@@ -3077,7 +3077,7 @@ const BIKE = {
                 "URLINFO": " ",
                 "GSKEY": "NP_1604",
                 "GEHZEIT": 0.0,
-                "SHAPE_LEN": 2800.649707
+                "SHAPE_LEN": 2800
             },
             "geometry": {
                 "type": "LineString",
@@ -3270,7 +3270,7 @@ const BIKE = {
                 "URLINFO": " ",
                 "GSKEY": "NP_1605",
                 "GEHZEIT": 0.0,
-                "SHAPE_LEN": 7708.951142
+                "SHAPE_LEN": 7708
             },
             "geometry": {
                 "type": "LineString",
@@ -3636,7 +3636,7 @@ const BIKE = {
                 "URLINFO": " ",
                 "GSKEY": "NP_1606",
                 "GEHZEIT": 0.0,
-                "SHAPE_LEN": 28920.797826000002
+                "SHAPE_LEN": 28920
             },
             "geometry": {
                 "type": "LineString",
@@ -5576,7 +5576,7 @@ const BIKE = {
                 "URLINFO": " ",
                 "GSKEY": "NP_1607",
                 "GEHZEIT": 0.0,
-                "SHAPE_LEN": 29400.757739000001
+                "SHAPE_LEN": 29400
             },
             "geometry": {
                 "type": "LineString",
