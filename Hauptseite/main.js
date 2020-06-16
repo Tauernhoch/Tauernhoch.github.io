@@ -71,15 +71,63 @@ let gpx = new L.GPX(`Glockner.gpx`, {
     polyline_options: {
         color: "red",
         dashArray: [2, 5]
+    },
+    pointToLayer: function (point, latlng) {
+        let siteIcon2 = L.icon({
+            iconUrl: 'icons/hut.png',
+            iconSize: [32, 32]
+        });
+        // let marker = L.marker(latlng, {
+        //     icon: siteIcon2
+        // }).bindPopup("test");
     }
 });
+
+// zweite möglichkeit für den Weg
+// let gpx6 = new L.GPX("Glockner.gpx", {
+//     async: true,
+//   //marker_options: {
+//   pointToLayer: function (point, latlng) {
+//     //    let siteIcon2 = L.icon({
+//     //         iconUrl: 'icons/hut.png',
+//     //          iconSize: [32, 32]
+//     //});
+//          let marker = L.marker(latlng, {
+//              //icon: siteIcon2
+//          });
+//      }
+//  });
+
+//  gpx6.on("loaded", function (evt) {
+//     let marker = L.marker([lat, lng])
+//     //map.fitBounds(evt.target.getBounds());
+// }).addTo(overlay.Großglockner);
+
+
+
+
+// new L.GPX("Glockner.gpx", {
+//     async: true,
+//     marker_options: {
+//       wptIconUrls: {
+//         '': 'icons/hut.png',
+//       },
+//   shadowUrl: 'http://github.com/mpetazzoni/leaflet-gpx/raw/master/pin-shadow.png'
+//     }
+//   }).on('loaded', function (e) {
+//    let gpx = e.target;
+//     //map.fitBounds(gpx.getBounds());
+//   }).addTo(overlay.Großglockner);
+//   overlay.Großglockner.addTo(map);
+
+
 
 //extremer Zoom liegt glaube ich an folgendem Absatz mit den fitBounds und der Control Elevation... 
 //ist bisschen blöd, weil ich nen Überblick cool fände, auf der anderen Seite können wirs im Bericht bestimmt auch begründen
 gpx.on("loaded", function (evt) {
-   //map.fitBounds(evt.target.getBounds());
-controlElevation.clear();
-controlElevation.load(`Glockner.gpx`);
+    map.fitBounds(evt.target.getBounds());
+    controlElevation.clear();
+    controlElevation.load(`Glockner.gpx`);
 }).addTo(overlay.Großglockner);
 
 overlay.Großglockner.addTo(map);
@@ -95,16 +143,20 @@ let controlElevation = L.control.elevation({
 
 
 
-// let gpx5 = new L.GPX(`venediger_nordgrat_track`, {
-//     async: true,
-//     polyline_options: {
-//         color: "yellow",
-//         dashArray: [2, 5]
-//     }
-// });
-// gpx5.on("loaded", function(evt) {
-//     map.fitBounds(evt.target.getBounds());
-// }).addTo(map);
+
+let gpx5 = new L.GPX(`venediger_nordgrat_track.gpx`, {
+    async: true,
+    marker_options: {
+        startIconUrl: 'icons/climbing.png',
+        endIconUrl: 'icons/climbing.png'},
+    polyline_options: {
+        color: "red",
+        dashArray: [2, 5]
+    }
+});
+gpx5.on("loaded", function(evt) {
+    // map.fitBounds(evt.target.getBounds());
+}).addTo(map);
 
 
 //Wanderweg Hoch Tirol
@@ -161,12 +213,12 @@ let gpx4 = new L.GPX("OEAV_Berghuetten.gpx", {
     // marker_options: {
     //     IconUrl: 'icons/hut.png',
     pointToLayer: function (point, latlng) {
-        let siteIcon2 = L.icon({
-            iconUrl: 'icons/hut.png',
-            iconSize: [32, 32]
-        });
+        // let siteIcon2 = L.icon({
+        //     iconUrl: 'icons/hut.png',
+        //     iconSize: [32, 32]
+        // });
         let marker = L.marker(latlng, {
-            icon: siteIcon2
+            //icon: siteIcon2
         });
     }
 });
@@ -176,43 +228,6 @@ gpx4.on("loaded", function (evt) {
     //map.fitBounds(evt.target.getBounds());
 }).addTo(overlay.Huetten);
 
-//     }
-// });
-// gpx4.on("loaded", function (evt) {
-//     let marker = L.marker([lat,lng])
-//     map.fitBounds(evt.target.getBounds());
-// }).addTo(overlay.Hütten);
-
-
-
-
-
-
-
-// let myIcon = L.icon({
-//     iconUrl: 'icons/hut.png',
-//     iconSize: [20, 38],
-//     iconAnchor: [0, 0],
-//     // popupAnchor: [-3, -76],
-
-// });
-
-
-
-// let huetten = L.GPX("OEAV_Berghuetten.gpx", {
-//     async: true,
-//     marker_options: {
-//         wptIconUrls: {
-//             'name': 'icons/hut.png',
-
-//         },
-
-//     }
-// })
-// huetten.on('loaded', function (e) {
-//     var gpx = e.target;
-//     // map.fitBounds(gpx.getBounds());
-// }).addTo(map);
 
 
 new L.GPX("OEAV_Berghuetten.gpx", {
@@ -227,6 +242,6 @@ new L.GPX("OEAV_Berghuetten.gpx", {
     var gpx = e.target;
     //map.fitBounds(gpx.getBounds());
   }).addTo(overlay.Huetten);
-  overlay.Huetten.addTo(map);
+//   overlay.Huetten.addTo(map);
 
 //   https://github.com/mpetazzoni/leaflet-gpx
