@@ -1,4 +1,3 @@
-
 let startLayer = L.tileLayer.provider("BasemapAT.grau");
 
 let map = L.map("map", {
@@ -50,8 +49,11 @@ let sight = L.geoJson(SIGHT, {
         let marker = L.marker(latlng,{
 icon: siteIcon
         });
-        console.log("Point", point);
-        marker.bindPopup(`<h3>${point.properties.NAME}</h3>
+        //console.log("Point", point);
+        marker.bindPopup(`
+        <h3>${point.properties.NAME}</h3>
+        <li>Seehöhe: ${point.properties.SEEHOEHE} m</li>
+        <li>Land: ${point.properties.LAND}</li>
         `);
         return marker;
     }
@@ -59,3 +61,4 @@ icon: siteIcon
 overlay.sight.addTo(map);
 
 
+console.log (SIGHT);
