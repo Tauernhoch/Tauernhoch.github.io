@@ -42,7 +42,7 @@ overlay.borders.addTo(map);
 let sight = L.geoJson(SIGHT, {
     pointToLayer: function(point, latlng) {
        let siteIcon = L.icon({
-            iconUrl: 'icons/hut.png',
+            iconUrl: 'icons/squirrel.png',
             iconSize: [32, 32]
         });
        
