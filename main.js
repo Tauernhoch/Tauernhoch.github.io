@@ -40,22 +40,15 @@ overlay.borders.addTo(map);
 //console.log(SIGHT)
 
 let sight = L.geoJson(SIGHT, {
-    pointToLayer: function (point, latlng) {
-        let siteIcon = L.icon({
-            if (point.properties.POI_TYP === 20) {
-               
-                    iconUrl: 'icons/hut.png',
-                    iconSize: [32, 32]
-                          } else {
-                iconUrl: 'icons/squirrel.png',
-                iconSize: [32, 32]
-            }
+    pointToLayer: function(point, latlng) {
+       let siteIcon = L.icon({
+            iconUrl: 'icons/hut.png',
+            iconSize: [32, 32]
         });
-
-        let marker = L.marker(latlng, {
-            icon: siteIcon
+       
+        let marker = L.marker(latlng,{
+icon: siteIcon
         });
-        //console.log("Point", point);
         marker.bindPopup(`
         <h3>${point.properties.NAME}</h3>
         <li>Seehöhe: ${point.properties.SEEHOEHE} m</li>
@@ -65,6 +58,3 @@ let sight = L.geoJson(SIGHT, {
     }
 }).addTo(overlay.sight);
 overlay.sight.addTo(map);
-
-
-//console.log (SIGHT);
