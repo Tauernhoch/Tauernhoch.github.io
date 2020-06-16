@@ -8,6 +8,7 @@ let map = L.map("map", {
     ]
 });
 
+let hutGroup = L.markerClusterGroup().addTo(map);
 
 //let bikekGroup = L.featureGroup().addTo(map);
 
@@ -56,10 +57,19 @@ let aussengrenze = L.geoJSON(GRENZE).addTo(overlay.borders);
 
 //ebike Routen
 let radln = L.geoJSON(BIKE, {
-    color: "yellow",
+    color: "grey",
+    onEachFeature: function (feature, layer) {
+        layer.bindPopup(`<h3>${feature.properties.NAME_DE}</h3>
+        <li>Streckenlänge: ${feature.properties.SHAPE_LEN} m</li>  `);
+        
+    }
 }).addTo(overlay.ebikes);
 overlay.ebikes.addTo(map);
 
+
+
+ //console.log("Point", point);
+ 
 //ebike Routen
 // let lehr = L.geoJSON(LEHRWEG, {
 //     color: "green",
@@ -264,10 +274,6 @@ let gpx22 = new L.GPX(`Hoch_Tirol/TK_01_Hoch_Tirol_4.gpx`, {
 overlay.Hoch_Tirol.addTo(map);
 
 
-
-
-
-
 let gpx12 = new L.GPX(`Hoch_Tirol/TK_01_Hoch_Tirol_5.gpx`, {
     async: true,
     marker_options: {
@@ -288,10 +294,6 @@ let gpx12 = new L.GPX(`Hoch_Tirol/TK_01_Hoch_Tirol_5.gpx`, {
 
 }).addTo(overlay.Hoch_Tirol);
 overlay.Hoch_Tirol.addTo(map);
-
-
-
-
 
 
 let gpx10 = new L.GPX(`Hoch_Tirol/TK_01_Hoch_Tirol_6.gpx`, {
@@ -315,20 +317,7 @@ gpx10.on("loaded", function (evt) {
 overlay.Hoch_Tirol.addTo(map);
 
 
-// let gpx3 = new L.GPX(`Skitour/TK_02_GrosserGeiger.gpx`, {
-//     async: true,
-//     marker_options: {
-//         startIconUrl: 'icons/skiing.png',
-//         endIconUrl: 'icons/skiing.png',
-//     },
-//     polyline_options: {
-//         color: "black",
-//         dashArray: [2, 5]
-//     }
-// });
-// gpx3.on("loaded", function (evt) {
 
-// }).addTo(overlay.Skitour);
 
 
 
@@ -363,12 +352,15 @@ new L.GPX("OEAV_Berghuetten.gpx", {
       wptIconUrls: {
         '': 'icons/hut.png',
       },
-      shadowUrl: 'http://github.com/mpetazzoni/leaflet-gpx/raw/master/pin-shadow.png'
+    //   shadowUrl: 'http://github.com/mpetazzoni/leaflet-gpx/raw/master/pin-shadow.png'
     }
   }).on('loaded', function (e) {
     var gpx = e.target;
     //map.fitBounds(gpx.getBounds());
   }).addTo(overlay.Huetten);
+
+  
+
 //   overlay.Huetten.addTo(map);
 
 //   https://github.com/mpetazzoni/leaflet-gpx
