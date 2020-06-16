@@ -43,8 +43,8 @@ body {
 }
 
 .steelblue-theme.elevation-polyline {
-    stroke-opacity: 0.0;
-}
+    stroke-opacity: 0.0; 
+ }
 
 header {
     color: #fff;
