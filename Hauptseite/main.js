@@ -309,8 +309,8 @@ let wf = L.geoJson(SIGHT, {
         });
         marker.bindPopup(`
         <h3>${point.properties.NAME}</h3>
-        <li>Seehöhe: ${point.properties.SEEHOEHE} m</li>
-        <li>Land: ${point.properties.LAND}</li>
+        
+        <p>Land: ${point.properties.LAND}</p>
         `);
         return marker;
     }
